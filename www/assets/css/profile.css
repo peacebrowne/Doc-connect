@@ -1,0 +1,87 @@
+/* Weigh section style
+
+#profile-section-tab {
+    display: grid;
+    grid-template-columns: 30% repeat(auto-fill, 35%);
+}
+
+#profile-statistics-section-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#pro-section-tab .tab-head,
+#profile-statistics-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+#tab-head-buy,
+#profile-statistics-section-tab #tab-head-pending {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-estate,
+#tab-content-shipment,
+#tab-content-submitted,
+#profile-statistics-section,
+.buy-statistics,
+.estate-statistics,
+.shipment-statistics {
+    display: none;
+}
+
+#profile-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#profile-section-tab #tab-head-buy {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-edit,
+#tab-content-password {
+    display: none;
+}
+
+#btn-group {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.submit-btn,
+.save-btn {
+    background: #bcb27b;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 8px 50px;
+}
+
+.submit-btn {
+    background: #675C2F;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.pending-and-submitted-entries {
+    background: #bcb27b;
+    color: #000;
+    font-size: 1em;
+    padding: 8px 0px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 6px;
+} */

@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Doc-connect",
+  "short_name": "Doc-connect",
+  "version": "io.cordova.hellocordova",
+  "description": "Sample Apache Cordova App",
+  "author": "Apache Cordova Team",
+  "icons": [],
+  "start_url": "login.html"
+}

@@ -1,0 +1,620 @@
+/* general styles */
+
+* {
+    box-sizing: border-box;
+}
+
+#sidebar-cover,
+#sidebar {
+    display: none;
+}
+
+#sync-section,
+#announcement-section,
+#menu-selection-next-btn,
+#buy-section,
+#collect-section,
+#weigh-section,
+#my-tasks-section {
+    display: block;
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#hamburger-icon {
+    font-size: 1.8em;
+    justify-self: start;
+}
+
+.logo {
+    justify-self: center;
+    height: 3em;
+}
+
+.wifi-icon {
+    font-size: 1.4em;
+    justify-self: end;
+}
+
+#offline-wifi-icon {
+    display: none;
+}
+
+.mdc-drawer__header {
+    display: grid;
+    justify-content: center;
+}
+
+.brand-logo-text {
+    color: #675C2F;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: -26px;
+    font-weight: bold;
+}
+
+.mdc-list-item {
+    background: rgb(188, 178, 123);
+    margin: 0px 10px 12px 10px !important;
+    border-radius: 8px !important;
+}
+
+.mdc-list-item a {
+    color: #000 !important;
+    font-size: 1.1em !important;
+}
+
+#sidebar-cover {
+    background: whitesmoke;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+#sidebar {
+    background: whitesmoke;
+    height: 100vh;
+    width: 76%;
+    position: absolute;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+}
+
+
+.login-user {
+    text-align: center;
+    padding-bottom: 26px;
+}
+
+header {
+    max-height: 10vh;
+    top: 0;
+}
+
+#landing-page-header{
+    width: 100%;
+    height: auto;
+    background-color: rgba(201,0,40,255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    /* margin: 5px auto; */
+    padding-top: 0.5%;
+}
+#nav_logo{
+    width: 95%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto 0px auto;
+    padding: 4% 0px 5% 0px;
+    /* background-color: green; */
+}
+#nav_logo span strong{
+    font-size: large;
+}
+#improvise{
+    width: 10%
+}
+#chat-icon{
+    display: none;
+    position: relative;
+    height: 100%;
+    text-align: right;
+}
+#chat-icon-menu{
+    margin-top: 11px;
+}
+
+#chat-icon-dropdown{
+    position: absolute;
+    width: 235px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px #bbb7a4;
+    margin-left: -210px;
+    margin-top: -3px;
+    top: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#chat-icon:hover #chat-icon-dropdown{
+    display: flex;
+    color: #333;
+}
+
+#hospital-icon{
+    display: none;
+    position: relative;
+    height: 100%;
+    text-align: right;
+    display: none;
+}
+#hospital-icon-menu{
+    margin-top: 11px;
+}
+
+#hospital-icon-dropdown{
+    position: absolute;
+    width: 235px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px #bbb7a4;
+    margin-left: -210px;
+    margin-top: -3px;
+    top: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#hospital-icon-dropdown span,#calls-icon-dropdown span,#chat-icon-dropdown span{
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    font-weight: bold;
+    font-size: small;
+}
+#hospital-icon-dropdown span:hover,#calls-icon-dropdown span:hover,#chat-icon-dropdown span:hover{
+    background-color: #d3d1c5;
+}
+#hospital-icon:hover #hospital-icon-dropdown{
+    display: flex;
+    color: #333;
+}
+
+
+#calls-icon{
+    position: relative;
+    height: 100%;
+    text-align: right;
+    display: none;
+}
+#calls-icon-menu{
+    margin-top: 11px;
+}
+
+#calls-icon-dropdown{
+    position: absolute;
+    width: 235px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px #bbb7a4;
+    margin-left: -210px;
+    margin-top: -3px;
+    top: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#calls-icon:hover #calls-icon-dropdown{
+    display: flex;
+    color: #333;
+}
+.dropdown-item{
+    margin: auto;
+}
+
+#landing-page-main{
+    width:100%;
+    height: auto;
+}
+#landing-page-footer {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.footer-col {
+    width: 25%;
+    height: 80%;
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
+
+#searches{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+#filter-search{
+    width: 80%;
+    height: 35px;
+    margin: 2% 10px;
+}
+#allSearch{
+    width: 80%;
+}
+.healthGroups {
+    margin-left: 58%;
+}
+
+/* @media only screen and (min-width: 840px) {
+
+    #landing-page-header{
+        height: auto;
+        align-items: center;
+    }
+    #searches{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+    #allSearch{
+        width: 40%;
+        height: 30px;
+        margin-bottom: auto;
+    }
+    #landing-page-footer{
+        height: 60px;
+        background: whitesmoke;
+
+    }
+   
+    #nav_logo{
+        height: 40px;
+    }
+
+    .footer-col{
+        justify-content: space-around;
+    }
+    #chat-icon-dropdown,#hospital-icon-dropdown,#calls-icon-dropdown{
+        margin-left: -198px;
+        margin-top: -5px;
+    }
+
+  } */
+
+/* search box */
+
+#doctorSearchBox{
+    /* background-color: green; */
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform: translate(0%,0%);
+    transition: all 1s;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 5px; 
+}
+
+#searchBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa-search{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+#doctorSearchBox:hover,
+#doctorSearchBox:valid{
+    width: 200px;
+    cursor: pointer;
+}
+
+#doctorSearchBox:hover #searchBox,
+#doctorSearchBox:valid #searchBox{
+    display: block;
+}
+
+#doctorSearchBox:hover .fa-search,
+#doctorSearchBox:valid .fa-search{
+   
+    color: rgba(201,0,40,255);
+}
+
+#doctorSearchBox:valid  {
+  display: block;
+}
+
+/* appointment search box */
+/* #appointment-searchBox{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform: translate(0%,0%);
+    transition: all 1s;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 5px; 
+}
+
+#searchBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa-search{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+#appointment-searchBox:hover,
+#appointment-searchBox:valid{
+    width: 200px;
+    cursor: pointer;
+}
+
+#appointment-searchBox:hover #searchBox,
+#appointment-searchBox:valid #searchBox{
+    display: block;
+}
+
+#appointment-searchBox:hover .fa-search,
+#appointment-searchBox:valid .fa-search{
+   
+    color: rgba(201,0,40,255);
+}
+
+#appointment-searchBox:valid  {
+  display: block;
+} */
+/* images status section */
+
+#container2 {
+  display: block;
+  width: 100%;
+  height: 20vw;
+
+  white-space: nowrap;
+}
+
+#imglist2 {
+  margin-top: 10px;
+  overflow-y: hidden;
+  overflow-x:scroll;
+  /* overflow-x: hidden; */
+  display: block;
+  width: 100%;
+/*height: 15vw;*/
+  height: 100%;
+}
+
+#imglist2 div {
+  width: 20%;
+  display: inline;
+}
+
+/* main chat list */
+
+#ladning-page-friends{
+	background-color: whitesmoke;
+	margin-top: 10px;
+	border-top-left-radius:50px;
+	border-top-right-radius:50px;
+}
+
+#book-appointment{
+    width: 100%;
+    height: 780px;
+    display: none;
+    /* background-color:blueviolet; */
+}
+#book-appointment form{
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#book-head{
+    width: 100%;
+    height: 60px;
+    background-color: #c90028;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px 10px 10px 0px;
+    color:white;
+    /* position: relative; */
+}
+#book-head span{
+    margin-top: 2%;
+    margin-right: 25%;
+    font-weight: bold;
+}
+#appointment-search{
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    /* background-color: rgb(241, 8, 8);  */
+    transform: translate(0%,0%);
+    transition: all 1s;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 5px; 
+    z-index: 1;
+}
+#apt-searchBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+#appointment-search:hover,
+#appointment-search:valid{
+    width: 200px;
+    cursor: pointer;
+}
+
+#appointment-search:hover #apt-searchBox,
+#appointment-search:valid #apt-searchBox{
+    display: block;
+}
+
+#order-medication{
+    width: 100%;
+    height: 60px;
+    background-color: #c90028;
+    display: none;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 5% 10px 5% 0px;
+    color:white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+#order-medication span{
+    margin-right: 10%;
+    width: auto;
+    font-weight: bold;
+}
+#contact-email{
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact-email .form-group input{
+    width: 96%;
+    margin: auto;
+}
+#book-appointment form button{
+    margin-right: 5%;
+}
+#request-apt-btn{
+    width: 90%;
+}
+#appointmentDoctors{
+    border: none;
+    background-color: white;
+    margin: 8px 0px;
+}
+.aptDoc {
+    width: 100%;
+    height: 80px;
+    /* border-bottom: 1px solid #242323; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.aptDoc:hover {
+    background: #f1f4f6;
+    cursor: pointer;
+}
+
+.aptDoc img {
+    width: 50px;
+    border-radius: 50px;
+    margin: 15px;
+    float: left;
+}

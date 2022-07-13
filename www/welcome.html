@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #cover{
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            z-index: 2;
+            background-color: white;
+            animation-name: example;
+            animation-duration: 10s;
+            animation-delay: 1s;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+        }
+        #banner{
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            z-index: 1;
+            background-color: whitesmoke;
+            color: #c90028;
+            font-weight: 900px;
+            font-size: xx-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes example {
+            0%{
+                left: 0px ;top: 0px;
+            }
+            30%{
+                left: 100%; top: 0px;
+            }
+            100%{
+                z-index: 0;
+            }
+            
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+        <div id="cover"></div>
+        <div id="banner">
+            <h1 class="login-head">Doc-Connect</h1>
+        </div>
+        <script>
+            window.setTimeout(()=>{
+                location.replace('login.html')
+            },4500)
+        </script>
+</body>
+</html>

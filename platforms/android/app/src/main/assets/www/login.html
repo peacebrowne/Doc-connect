@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Login</title>
+</head>
+
+<body class="app sidebar-mini rtl" onload="checkSessionIfUserLogIn()">
+    <div id="loader-cover"></div>
+    <div id="loader">
+        <span id="loader-msg"></span>
+        <div class="loader"></div>
+    </div>
+	<div id="signUpLoader-cover"></div>
+    <div id="signingUploader">
+        <span id=""></span>
+        <div class="signUploader"></div>
+    </div>
+    <section class="login-content">
+        <div class="logo">
+            <img src="assets/images/realLogo.png" class="center-img" alt="logo" width="200">
+        </div>
+        <div class="login-box">
+            <form class="login-form" method="post" action="">
+                <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>LOGIN</h3>
+                <div class="form-group">
+                    <label class="control-label">USERNAME</label>
+                    <input id="username" class="form-control" type="text" placeholder="Username" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">PASSWORD</label>
+                    <input id="password" class="form-control" type="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <div class="utility">
+                        <p class="semibold-text mb-2"><a href="#" data-toggle="signUPflip">Sign Up ?</a></p>
+                        <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
+                    </div>
+                </div>
+                <div class="form-group btn-container">
+                    <button id="login-btn" type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>LOGIN</button>
+                </div>
+            </form>
+            <form class="forget-form" style="display: none;" id="forgetPassword" action="">
+                <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Forgot Password ?</h3>
+                <div class="form-group">
+                    <label class="control-label">EMAIL</label>
+                    <input class="form-control" type="text" placeholder="Email">
+                </div>
+                <div class="form-group btn-container">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
+                </div>
+                <div class="form-group mt-3">
+                    <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i> Back to Login</a></p>
+                </div>
+            </form>
+         
+            <form action="#" id="signUp" class="forget-form signUp-form">
+                <h3 class="login-head">WHO ARE YOU ?</h3>
+                <div class="form-group">
+                    <select class="form-control name=" id="select">
+                        <option  value="" selected disabled>Who are you?</option>
+                        <option  value="doctor">DOCTOR</option>
+                        <option  value="patient">PATIENT</option>
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i> Back to Login</a></p>
+                </div>
+                <div class="form-group btn-container">
+                    <button id="signUp-btn" class="btn btn-primary btn-block">SUBMIT</button>
+                </div>
+            </form>
+                <form style="display:none;" id="doctor-form" class="doc-signUp-form" method="post" action="" >
+                    <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user" style="position: sticky; top: 0;"></i>DOC SIGN UP</h3>
+                    <div class="form-group">
+                        <label class="control-label">FIRST NAME</label>
+                        <input id="doc-firstname" class="form-control" type="text" placeholder="firstname" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">MIDDLE NAME</label>
+                        <input id="doc-middlename" class="form-control" type="text" placeholder="middlename" autofocus >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">LAST NAME</label>
+                        <input id="doc-lastname" class="form-control" type="text" placeholder="lastname" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">USERNAME</label>
+                        <input id="doc-username" class="form-control" type="text" placeholder="username" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">EMAIL</label>
+                        <input id="doc-email" class="form-control" type="text" placeholder="Email" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">PHONE NUMBER</label>
+                        <input id="doc-phone-number" class="form-control" maxlength="10" type="tel" placeholder="Phone Number" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">SPECIALIZATION</label><br>
+						<select id="specialization" onchange="hideAndShowOtherSpecializationElement(this.value)"  style="width: 100%;" class="form-select" aria-label="Default select example" required>
+							
+							<option selected disabled>What do you specialize in?</option>
+							<option value="Allergy and immunology">Allergy and immunology</option>
+							<option value="Anesthesiology">Anesthesiology</option>
+							<option value="Dermatology">Dermatology</option>
+							<option value="Diagnostic radiology">Diagnostic radiology</option>
+							<option value="Emergency medicine">Emergency medicine</option>
+							<option value="Family medicine">Family medicine</option>
+							<option value="Internal medicine">Internal medicine</option>
+							<option value="Medical genetics">Medical genetics</option>
+							<option value="Neurology">Neurology</option>
+							<option value="Nuclear medicine">Nuclear medicine</option>
+							<option value="Obstetrics and gynecology">Obstetrics and gynecology</option>
+							<option value="Ophthalmology">Ophthalmology</option>
+							<option value="Pathology">Pathology</option>
+							<option value="Pediatrics">Pediatrics</option>
+							<option value="Physical medicine and rehabilitation">Physical medicine and rehabilitation</option>
+							<option value="Preventive medicine">Preventive medicine</option>
+							<option value="Psychiatry">Psychiatry</option>
+							<option value="Radiation oncology">Radiation oncology</option>
+							<option value="Surgery">Surgery</option>
+							<option value="Urology">Urology</option>
+							<option value="others">Others</option>
+						  </select>
+                        <!-- <input id="specialization" class="form-control" type="text" placeholder="Specialization" autofocus required> -->
+                    </div>
+					<div class="form-group" id="otherSpecializationDiv" style="display:none;">
+                        <label class="control-label">Type you specialization:</label>
+                        <input id="otherDoctorSpecialization" class="form-control" type="text" placeholder="Please type your specialization" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">HOSPITAL</label>
+                        <input id="doc-hospital" class="form-control" type="text" placeholder="Hospital" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">PASSWORD</label>
+                        <input id="doc-user-password" class="form-control" type="password" minlength="5" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">COMFIRM PASSWORD</label>
+                        <input id="doc-comfirm-password" class="form-control" type="password" minlength="5" placeholder="Comfirm Password" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="utility">
+                            <p class="semibold-text mb-2 "><a href="#">Back To Sign Up ?</a></p>
+                        </div>
+                    </div>
+                    <div class="form-group btn-container">
+                        <button id="doc-signUp-btn" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN UP</button>
+                    </div>
+                </form>
+
+                <!-- patient form -->
+                <form style="display:none;" id="patient-form" class="patent-signUp-form" method="post" action="" >
+                    <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user" style="position: sticky; top: 0;"></i>DOC SIGN UP</h3>
+                    <div class="form-group">
+                        <label class="control-label">FIRST NAME</label>
+                        <input id="patient-firstname" class="form-control" type="text" placeholder="firstname" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">MIDDLE NAME</label>
+                        <input id="patient-middlename" class="form-control" type="text" placeholder="middlename" autofocus >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">LAST NAME</label>
+                        <input id="patient-lastname" class="form-control" type="text" placeholder="lastname" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">USERNAME</label>
+                        <input id="patient-username" class="form-control" type="text" placeholder="username" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">EMAIL</label>
+                        <input id="patient-email" class="form-control" type="text" placeholder="Email" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">PHONE NUMBER</label>
+                        <input id="patient-phone-number" class="form-control" maxlength="10" type="tel" placeholder="Phone Number" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">OCCUPATION</label>
+                        <input id="patient-occupation" class="form-control" maxlength="10" type="text" placeholder="occupation" autofocus required>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label class="control-label">PASSWORD</label>
+                        <input id="patient-password" class="form-control" type="password" minlength="5" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">COMFIRM PASSWORD</label>
+                        <input id="patient-comfirm-password" class="form-control" type="password" minlength="5" placeholder="Comfirm Password" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="utility" id="patient-backTo-signUP">
+                            <p class="semibold-text mb-2 "><a href="#">Back To Sign Up ?</a></p>
+                        </div>
+                    </div>
+                    <div class="form-group btn-container">
+                        <button id="patient-signUp-btn" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN UP</button>
+                    </div>
+                </form>
+      
+        </div>
+    </section>
+    
+    <section>
+        <form id="upload-picture-form">
+
+            <div id="upload-div" style="display: none;">
+                <h3 class="login-head">UPLOAD PICTURE</h3>
+                <div id="displayImg"></div>
+                <input type="file" id="img-file" class="form-control">
+                <button id="upLoadBtn">Upload Image</button>
+                <div id="skip-img">
+                    <span><strong>Skip</strong></span>
+                </div>
+
+            </div>
+
+        </form>
+    </section>
+
+    <!-- Scripts -->
+    <!-- Essential javascripts for application to work-->
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/sweet-alert.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="./assets/js/pace.min.js"></script>
+    <script src="./assets/js/extended/functions.js"></script>
+    <script src="./assets/js/extended/login.js"></script>
+    <script type="text/javascript">
+        // Login Page Flipbox control
+        $('.login-content [data-toggle="flip"]').click(function() {
+            $("#signUp").hide();
+            $("#forgetPassword").show();
+            $('.login-box').toggleClass('flipped');
+            
+            return false;
+        });
+        $('.login-content [data-toggle="signUPflip"]').click(function() {
+            $("#forgetPassword").hide();
+            $("#signUp").show();
+            $('.login-box').toggleClass('flipped');
+            
+            return false;
+        });
+
+    </script>
+    <!-- Rotate to the sign-up form -->
+    <script src="./assets/js/extended/custom.js"></script>
+    <script src="./js/sign-up.js"></script>
+
+    
+</body>
+
+</html>

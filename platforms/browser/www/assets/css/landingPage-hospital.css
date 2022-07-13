@@ -1,0 +1,64 @@
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue
+}
+
+#hospitals {
+    display: none;
+    /* background-color: red; */
+    width: 100%;
+    height: auto;
+}
+
+#hospital-question{
+    width: 90%;
+    height: 70px;
+    background: whitesmoke;
+    border: 1px solid #dddd;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#hospital-question input{
+    background-color: whitesmoke;
+    width: 55%;
+    border: none;
+    outline: none;
+}
+#hospital-question i{
+    margin-left: 5px;
+}
+#myDIV{
+    width: 90%;
+    height: 100px;
+    background-color: chocolate;
+    margin: 5px auto;
+}

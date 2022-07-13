@@ -1,0 +1,326 @@
+/* general styles */
+
+* {
+    box-sizing: border-box;
+}
+
+#sidebar-cover,
+#sidebar {
+    display: none;
+}
+
+#sync-section,
+#announcement-section,
+#menu-selection-next-btn,
+#buy-section,
+#collect-section,
+#weigh-section,
+#my-tasks-section {
+    display: block;
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#hamburger-icon {
+    font-size: 1.8em;
+    justify-self: start;
+}
+
+.logo {
+    justify-self: center;
+    height: 3em;
+}
+
+.wifi-icon {
+    font-size: 1.4em;
+    justify-self: end;
+}
+
+#offline-wifi-icon {
+    display: none;
+}
+
+.mdc-drawer__header {
+    display: grid;
+    justify-content: center;
+}
+
+.brand-logo-text {
+    color: #675C2F;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: -26px;
+    font-weight: bold;
+}
+
+.mdc-list-item {
+    background: rgb(188, 178, 123);
+    margin: 0px 10px 12px 10px !important;
+    border-radius: 8px !important;
+}
+
+.mdc-list-item a {
+    color: #000 !important;
+    font-size: 1.1em !important;
+}
+
+#sidebar-cover {
+    background: whitesmoke;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+#sidebar {
+    background: whitesmoke;
+    height: 100vh;
+    width: 76%;
+    position: absolute;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+}
+
+
+.login-user {
+    text-align: center;
+    padding-bottom: 26px;
+}
+
+header {
+    max-height: 10vh;
+    top: 0;
+}
+
+#landing-page-header{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+#nav_logo{
+    width: 95%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto;
+}
+#nav_logo span strong{
+    font-size: large;
+}
+#chat-icon{
+    display: none;
+    position: relative;
+    height: 100%;
+    text-align: right;
+}
+#chat-icon-menu{
+    margin-top: 11px;
+}
+
+#chat-icon-dropdown{
+    position: absolute;
+    width: 235px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px #bbb7a4;
+    margin-left: -210px;
+    margin-top: -3px;
+    top: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#chat-icon:hover #chat-icon-dropdown{
+    display: flex;
+    color: #333;
+}
+
+#hospital-icon{
+    display: none;
+    position: relative;
+    height: 100%;
+    text-align: right;
+    display: none;
+}
+#hospital-icon-menu{
+    margin-top: 11px;
+}
+
+#hospital-icon-dropdown{
+    position: absolute;
+    width: 235px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px #bbb7a4;
+    margin-left: -210px;
+    margin-top: -3px;
+    top: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#hospital-icon-dropdown span,#calls-icon-dropdown span,#chat-icon-dropdown span{
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    font-weight: bold;
+    font-size: small;
+}
+#hospital-icon-dropdown span:hover,#calls-icon-dropdown span:hover,#chat-icon-dropdown span:hover{
+    background-color: #d3d1c5;
+}
+#hospital-icon:hover #hospital-icon-dropdown{
+    display: flex;
+    color: #333;
+}
+
+
+#calls-icon{
+    position: relative;
+    height: 100%;
+    text-align: right;
+    display: none;
+}
+#calls-icon-menu{
+    margin-top: 11px;
+}
+
+#calls-icon-dropdown{
+    position: absolute;
+    width: 235px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px #bbb7a4;
+    margin-left: -210px;
+    margin-top: -3px;
+    top: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#calls-icon:hover #calls-icon-dropdown{
+    display: flex;
+    color: #333;
+}
+.dropdown-item{
+    margin: auto;
+}
+
+#landing-page-main{
+    width:100%;
+    height: auto;
+}
+#landing-page-footer {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.footer-col {
+    width: 25%;
+    height: 80%;
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
+
+#searches{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+#filter-search{
+    width: 80%;
+    height: 35px;
+    margin: 2% 0px;;
+}
+#allSearch{
+    width: 80%;
+}
+.healthGroups {
+    margin-left: 58%;
+}
+
+@media only screen and (min-width: 840px) {
+
+    #landing-page-header{
+        height: auto;
+        align-items: center;
+        /* background-color: red; */
+    }
+    #searches{
+    width: 100%;
+    height: 35px;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+    #filter-search{
+        width: 40%;
+        height: 30px;
+    }
+   
+    #allSearch{
+        width: 40%;
+        height: 30px;
+        margin-bottom: auto;
+    }
+    #landing-page-footer{
+        height: 60px;
+        background: whitesmoke;
+
+    }
+   
+    #nav_logo{
+        height: 40px;
+    }
+
+    .footer-col{
+        justify-content: space-around;
+    }
+    #chat-icon-dropdown,#hospital-icon-dropdown,#calls-icon-dropdown{
+        margin-left: -198px;
+        margin-top: -5px;
+    }
+
+  }
+

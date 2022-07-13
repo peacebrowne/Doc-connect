@@ -1,0 +1,28 @@
+#booking-emergency{
+    display: none;
+}
+#emergency-title{
+    margin: 5% auto;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding-top: 1%;
+    
+}
+
+#booking-emegency-header{
+    width: 100%;
+    height: 60px;
+    background-color: #c90028;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 5px 5% 5px;
+    color:white;
+    position: sticky;
+    top:0;
+    z-index: 1;
+}

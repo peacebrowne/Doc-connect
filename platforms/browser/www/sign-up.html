@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/main.css"> -->
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sign-up.css">
+    <title>Sign Up</title>
+</head>
+
+<body class="app sidebar-mini rtl">
+    <div id="loader-cover"></div>
+    <div id="loader">
+        <span id="loader-msg"></span>
+        <div class="loader"></div>
+    </div>
+    <section class="signUp-content">
+        <div class="logo">
+            <img src="assets/images/realLogo.png" class="center-img" alt="logo" width="200">
+        </div>
+        <div class="signUp-box">
+            <form class="signUp-form" method="post" action="">
+                <h3 class="signUp-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN UP</h3>
+                <div class="form-group">
+                    <label class="control-label">FIRST NAME</label>
+                    <input id="firstname" class="form-control" type="text" placeholder="firstname" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">MIDDLE NAME</label>
+                    <input id="middlename" class="form-control" type="text" placeholder="lastname" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">LAST NAME</label>
+                    <input id="lastname" class="form-control" type="text" placeholder="lastname" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">EMAIL</label>
+                    <input id="email" class="form-control" type="email" placeholder="email" autofocus>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">CONTACT</label>
+                    <input id="contact" class="form-control" type="tel" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">SPECIALIZATION</label>
+                    <input id="specialization" class="form-control" type="text" placeholder="Specialization">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">HOSPITAL</label>
+                    <input id="hospital" class="form-control" type="text" placeholder="Hospital">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">PASSWORD</label>
+                    <input id="password" class="form-control" type="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">COMFIRM PASSWORD</label>
+                    <input id="comfirm-password" class="form-control" type="password" placeholder="Comfirm Password">
+                </div>
+                <div class="form-group">
+                    <div class="utility">
+                        <div class="animated-checkbox">
+                            <label>
+                                <input type="checkbox"><span class="label-text">Sign In</span>
+                            </label>
+                        </div>
+                        <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
+                    </div>
+                </div>
+                <div class="form-group btn-container">
+                    <button id="signUp-btn" type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN UP</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

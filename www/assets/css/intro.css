@@ -1,0 +1,59 @@
+#carouselExampleCaptions{
+    width: 100%;
+    height: 784px;
+    background-color: rgb(236, 232, 232);
+    position: relative;
+}
+.slide-div{
+    width: 100%;
+    height: 600px;
+    background: #c90028;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.carousel-indicators button{
+    margin: 0px 5px;
+}
+header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+header h3{
+    margin: 3% 0px 0% 5%;
+    font-weight: bold;
+    color: #615e5e;
+}
+.skip{
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    z-index: 1;
+}
+.skip a{
+    color: #615e5e;
+    font-size: large;
+}
+.skip a span:hover{
+    border-bottom: 1px solid #615e5e;
+}
+p{
+    font-size: medium;
+}
+h5{
+    font-size: large;
+}
+img{
+    width: 90%;
+    margin: -20% auto 0px auto;
+}
+/* .carousel-control-prev{
+    background-color: tomato;
+} */

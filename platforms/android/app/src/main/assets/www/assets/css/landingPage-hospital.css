@@ -1,0 +1,99 @@
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid blue
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue
+}
+
+#hospitals {
+    display: none;
+    background-color: rgb(231, 224, 224);;
+    width: 100%;
+    padding-bottom: 14%;
+}
+
+#hospital-question{
+    width: 95%;
+    height: 70px;
+    background: white;
+    border: 1px solid rgb(88, 88, 88);
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#hospital-question input{
+    background-color: white;
+    width: 55%;
+    border: none;
+    outline: none;
+}
+#hospital-question i{
+    margin-left: 5px;
+}
+
+.hospital-card{
+    width: 100%;
+    height: 500px;
+    margin: 5% auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+
+}
+
+.card-img{
+    width: 100%;
+    height: 60%;
+    margin-top: -5%;
+    /* background-color: blueviolet; */
+}
+
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+.card-body-info{
+    width: 100%;
+    height: 20%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+
+.somewher{
+    margin-left: 5%;
+}

@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doctor</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
+    <!-- End plugin css for this page -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/mdb.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <link rel="stylesheet" href="assets/css/general-app.css">
+    <link rel="stylesheet" href="assets/css/sync-section.css">
+    <link rel="stylesheet" href="assets/css/landingPage-section.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+    <link rel="stylesheet" href="assets/css/collect-section.css">
+
+    <link rel="stylesheet" href="assets/css/my-tasks-section.css">
+    <link rel="stylesheet" href="assets/css/home-section.css">
+    <link rel="stylesheet" href="./assets/css/landingPage-post.css">
+    <link rel="stylesheet" href="assets/css/landingPage-hospital.css">
+    <link rel="stylesheet" href="assets/css/landingPage-chat.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./css/doc_profile.css">
+    <link rel="stylesheet" href="./css/chats.css">
+    <!-- <link rel="stylesheet" href="./assets/css/uploadImg.css"> -->
+    <link rel="stylesheet" href="../fontawesome-free-5.10.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/book-emergency.css">
+    <!-- Save Modal links-->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+</head>
+
+<body>
+    <script src="assets/js/preloader.js"></script>
+
+    <div id="loader-cover2"></div>
+    <div id="loader2">
+        <span id="loader-msg2"></span>
+        <div class="loader2"></div>
+    </div>
+
+   
+    <section id="sidebar-cover"></section>
+    <aside id="sidebar" class="mdc-drawer">
+
+        <div class="mdc-drawer__header">
+            <a href="doctor.html" class="brand-logo">
+                <img id="sidebarProfileImg" src="" class="logo" alt="logo">
+            </a>
+            <p class="brand-logo-text">Latex App</p>
+        </div>
+        <hr>
+        <div class="mdc-drawer__content">
+            <div class="mdc-list-group">
+
+                <h6 class="login-user">
+
+                    <strong>Welcome Joe Paye</strong>
+                </h6>
+                <nav class="mdc-list mdc-drawer-menu">
+                    <div class="mdc-list-item mdc-drawer-item">
+                        <a class="mdc-drawer-link" href="#" onclick="showProfileSection()">My Profile</a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                        <a class="mdc-drawer-link" href="#" onclick="showDownloadSection()">Download Tappers &amp; Gangs</a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                        <a class="mdc-drawer-link" href="#">Download Farmers</a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                        <a class="mdc-drawer-link" href="#">Settings</a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                        <a class="mdc-drawer-link" href="#">Help &amp; Support</a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                        <a onclick="removeUserFromSession()" class="mdc-drawer-link" href="#" >Logout</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </aside>
+   
+    <!-- partial:partials/_navbar.html -->
+    <div id="landing-page-header" style="background-color: rgba(201,0,40,255);">
+
+        <div id="nav_logo">
+            <img  src="assets/images/realLogo.png" width="15%" alt="logo" id="profile_img" class="sidebar-toggler"> 
+            <span style="color: white;"><strong>Chat</strong></span>
+            <form id="doctorSearchBox" action="">
+                <input id="searchBox" type="search" required>
+                <i class="fa fa-search"></i>
+            </form>
+        </div>
+
+      <div id="searches">
+            <select  id="filter-search">
+                <option disabled selected>Fliter Specialist</option>
+                <option value="All">All</option>
+                <option value="Eye" >Eye</option>
+                <option value="Bone">Bone</option>
+                <option value="Liver">Liver</option>
+                <option value="Brain">Brain</option>
+                <option value="Heart">Heart</option>
+            </select>
+      </div>
+        <a href="#" style="color:white; font-weight: 900; margin-left:20px; margin-bottom: 2%;" id="schedule-appointment">Book Appointments</a>
+    </div>
+
+    <!-- Main page content -->
+       <!-- Main page content -->
+       <main id="landing-page-main"> 
+        <section id="home-page">
+            <div id="landing-page-friends" style="overflow-y: scroll;">
+				
+                <div id="friends" style="border: none;"  class="form-control"></div>
+
+            </div>
+        </section> 
+
+        <!-- HOSPITALS -->
+        <section id="hospitals">
+            <div id="booking-emegency-header">
+                <div style="display: flex; justify-content: center; align-items: center; width: 50px;">
+                    <img  src="assets/images/realLogo.png" width="15%" alt="logo" id="profile_img" class="sidebar-toggler"> 
+                </div>
+                <span class="login-head" style="font-weight: bold; font-size:large;">Hospitals</span>
+                <form id="doctorSearchBox" action="">
+                    <input id="searchBox" type="search" required>
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+
+            <div id="hospital-question">
+                <input id="myInput" type="text" class="form-control" placeholder="Have a question? Ask Now"> <button class="btn btn-primary">ASK</button> 
+            </div>
+
+            <div class="card" style="width: 100%;  margin: 5% auto;">
+                <img src="./assets/images/jfk.jpg" height="50%" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h4 class="card-title">JFK HOSPITAL</h4>
+                    <p class="card-text">
+                    Some quick example text to build on
+                    the card title and make up the bulk
+                        of the card's content.
+                    </p>
+                    <p class="card-text">Rooms Avaliable:10</p>
+
+                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 100%; margin: 5% auto;">
+                <img src="./img/download (1).jpeg" height="50%" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h4 class="card-title">ELWA HOSPITAL</h4>
+                    <p class="card-text">
+                    Some quick example text to build on
+                    the card title and make up the bulk
+                        of the card's content.
+                    </p>
+                    <p class="card-text">Rooms Avaliable:10</p>
+
+                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 100%; margin: 5% auto;">
+                <img src="./img/download (2).jpeg" height="50%" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h4 class="card-title">SD COOPER HOSPITAL</h4>
+                    <p class="card-text">
+                    Some quick example text to build on
+                    the card title and make up the bulk
+                        of the card's content.
+                    </p>
+                    <p class="card-text">Rooms Avaliable:10</p>
+
+                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 100%; margin: 5% auto;">
+                <img src="./img/download (3).jpeg" height="50%" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h4 class="card-title">FEDELITY HOSPITAL</h4>
+                    <p class="card-text">
+                    Some quick example text to build on
+                    the card title and make up the bulk
+                        of the card's content.
+                    </p>
+                    <p class="card-text">Rooms Avaliable:10</p>
+
+                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 100%; margin: 5% auto;">
+                <img src="./img/download (4).jpeg" height="50%" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h4 class="card-title">GOODWILL HOSPITAL</h4>
+                    <p class="card-text">
+                    Some quick example text to build on
+                    the card title and make up the bulk
+                        of the card's content.
+                    </p>
+                    <p class="card-text">Rooms Avaliable:10</p>
+
+                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                </div>
+            </div>
+
+          
+        </section>
+
+
+        <!-- POSTS -->
+        <section id="notification" style="display: none;">
+
+            <div class="tab-content" id="tab-content-posts">
+                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                    Notification
+                </section>
+            </div>
+        </section>
+
+        <!-- PHARMACY -->
+        <section id="calls" style="display: none;">
+            <!-- <div class="tab-content" id="tab-content-calls"> -->
+                <section id="ask-patient">
+                    
+                    <div id="order-medication">
+                        <div id="appointment-search">
+                            <input id="apt-searchBox" type="search" required>
+                            <i class="icons fa fa-search"></i>
+                        </div>
+                        <div></div>
+                        <span class="login-head"  style="font-weight: bold; font-size:large;">SELECT MEDICATION</span>
+                        <div style="display: flex; justify-content: center; align-items: center; width: 50px;">
+                            <i class="icons fa fa-arrow-left" id="bckToAsk" style="color: white; width: 20px; margin-left: 2%;"></i>
+                            <i class="icons fa fa-arrow-left" id="bcktoMedList" style="display: none;  margin-left: 2%;"></i>
+                        </div>
+                    </div>
+
+                    <div class="popup">
+                        <span class="popout form-control"></span>
+                        <span class="popuptext form-control" id="myPopup"></span>
+                    </div>
+
+                    <form id="pharmacy-order-form">
+                        <select class="form-control" style="margin: 4% auto; width: 90%;">
+                            <option  selected disabled>DO YOU HAVE ANY PRESCRIPTON ?</option>
+                            <option value="yes">YES</option>
+                            <option value="no">NO</option>
+                        </select>
+                        
+                        
+                        <section  id="selected-med">
+                            <div style="overflow: scroll; height: 550px;">
+                              
+                            </div>
+                            <div id="totalAmount"class="form-control" >
+                                <span>Total:</span><span>$</span><span>0</span><span>USD</span>
+                            </div>
+                        </section>
+
+
+                        <section style="display: none;" id="list-of-med" class="form-control">
+                            <div class="med-name form-control">
+                                <div class="med form-control" style="height: 40px;">
+                                    <span class="login-head">PAIN</span>
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+                                
+                                <div class="med-list form-control">
+                                    <div class="medicine form-control">
+                                        <div class="card" style="width: 100%;">
+                                            <img src="./img/painmed.webp" height="50%" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                            <h5 class="card-title">PANAMAX</h5>
+                                                <p class="card-text">
+                                                Some quick example text to build on
+                                                the card title and make up the bulk
+                                                    of the card's content.
+                                                </p>
+                                                <div class="row">
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>RATE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>4.9</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>PRICE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>
+                                                        <span style="margin-right: -5%;">$</span>
+                                                            <span>3.50</span>
+                                                            <span>USD</span>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            <a href="#" class="btn btn-primary add-to-card">ADD TO CART</a>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="medicine form-control">
+                                        <div class="card" style="width: 100%;">
+                                            <img src="./img/painmed.webp" height="50%" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                            <h5 class="card-title">BANAMAX</h5>
+                                                <p class="card-text">
+                                                Some quick example text to build on
+                                                the card title and make up the bulk
+                                                    of the card's content.
+                                                </p>
+                                                <div class="row">
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>RATE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>4.9</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>PRICE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>
+                                                            <span style="margin-right: -5%;">$</span>
+                                                            <span>3.50</span>
+                                                            <span>USD</span>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            <a href="#" class="btn btn-primary add-to-card">ADD TO CART</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COLD -->
+                            <div class="med-name form-control">
+                                <div class="med form-control" style="height: 40px;">
+                                    <span class="login-head">PAIN</span>
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+                                
+                                <div class="med-list form-control">
+                                    <div class="medicine form-control">
+                                        <div class="card" style="width: 100%;">
+                                            <img src="./img/painmed.webp" height="50%" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                            <h5 class="card-title">PANAMAX</h5>
+                                                <p class="card-text">
+                                                Some quick example text to build on
+                                                the card title and make up the bulk
+                                                    of the card's content.
+                                                </p>
+                                                <div class="row">
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>RATE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>4.9</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>PRICE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>
+                                                        <span style="margin-right: -5%;">$</span>
+                                                            <span>3.50</span>
+                                                            <span>USD</span>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            <a href="#" class="btn btn-primary add-to-card">ADD TO CART</a>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="medicine form-control">
+                                        <div class="card" style="width: 100%;">
+                                            <img src="./img/painmed.webp" height="50%" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                            <h5 class="card-title">CANAMAX</h5>
+                                                <p class="card-text">
+                                                Some quick example text to build on
+                                                the card title and make up the bulk
+                                                    of the card's content.
+                                                </p>
+                                                <div class="row">
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>RATE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>4.9</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>PRICE:</h5>
+                                                    </div>
+                                                    <div class="col-6 col-md-4">
+                                                        <h5>
+                                                            <span style="margin-right: -5%;">$</span>
+                                                            <span>3.50</span>
+                                                            <span>USD</span>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            <a href="#" class="btn btn-primary add-to-card">ADD TO CART</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </section>
+
+                        
+                        <section id="upload-prescription">
+                            <div id="upload-prescripton-form">
+
+                                <section id="upload" class="form-control" style="margin: 3% auto;">
+                                    <div id="upload-image">
+                                       <input id="drop_zone" name="profileImage" type="file" class="FileUpload form-control order-med-pic" placeholder="Choose Image" >
+                                       <div class="dropZoneOverlay">Upload Prescription</div>
+                                    </div>
+              
+                                  
+                                
+                                </section>
+
+                                <div class="upload-card" >
+                                    <div class="card-img box-2">
+                                        <div class="result" style="margin: 3% auto;"></div>
+                                    </div>
+                    
+                                </div>
+                                <button id="upload-prescription-btn" class="btn btn-primary btn-block">ORDER</button>
+                            
+                            </div>
+                        </section>
+
+
+                        
+                        <section id="pharmacy-btns">
+                            
+                            <button id="nextBtn" class="btn btn-primary btn-block" >NEXT</button>
+                            <button id="orderBtn" class="btn btn-primary btn-block" >ORDER</button>
+
+                        </section>
+
+                       
+                    </form>
+                </section>
+                
+            <!-- </div> -->
+        </section>
+
+        <section id="Other-doctors" style="display: none;">
+
+            <div class="form-control">
+                Other Doctors
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- This is the start section for the doctor's profile -->
+
+    <!-- This is the start section for the doctor's profile -->
+
+    <section id="doc-profile" style="display: none; width: 100%;">
+        <div style="z-index:1; padding: 5px 5px 5px 5px ;background-color: white; font-size: larger; position: sticky;  top: 0;">
+            <a href="./index.html" style="font-size: larger; color: #3d3d3d;">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        </div>
+        <div style="display: none;" id="doc-id">
+
+        </div>
+        <div class="card" style="width: 96%; margin: 5% auto 10% auto;">
+            <img src="./img/professional_doctor.jpeg" id="receiver-img" height="450px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                     <h3 class="card-title" id="receiver-name">DR. JOHN DOE</h3>
+                        
+                    </div>
+                    <div class="col-sm-4" style="text-align: center;">
+                     <h5>GENERAL PRACTITIONAL</h5>
+                        
+                    </div>
+                </div>
+              
+                <div class="form-control" id="chat-and-follow">
+                    <div class="form-group">
+                        <button id="chatBtn" style="margin-left: -5%;" class="btn btn-primary btn-block"><i id="icons" class="fa footer-col-icon">&#xf075;</i> CHAT</button>
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <button id="bookBtn" class="btn btn-primary btn-block" style="margin-top: -0.5%;">APPOINTMENT</button>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h4 class="card-title"  style="margin-top: 5%; text-align: left;">ABOUT</h4>
+                    </div>
+                </div>
+                <p class="card-text">
+                    Some quick example text to build on
+                    the card title and make up the bulk
+                    of the card's content.<span id="view-more">view more</span>
+                </p>
+                <div id="more-about-doc">
+                    <p class="card-text">
+                        Some quick example text to build on
+                        the card title and make up the bulk
+                        of the card's content.
+                        Some quick example text to build on
+                        the card title and make up the bulk
+                        of the card's content.
+                    </p>
+                </div>
+            </div>
+        </div>
+  
+</div>
+</section>
+
+
+    <!-- start section for the charts -->
+    <section id="doc-conversation" style="display: none;">
+        <div id="header">
+            <div id="doc-img">
+				<a href="doctor.html"" class="icons fa fa-arrow-left"></a>
+                 <div class="incoming-img" id="div-img">
+                    <img src="" width="40px" height="40px" style="border-radius: 50px;" alt="">
+                 </div>
+            </div>
+            <div id="name">
+                <span id="doc-name"> </span>
+            </div>
+            <div id="doc-calls-icons">
+                <i class="fa fa-phone"></i>
+                 <i class="fa fa-video"></i>
+            </div>
+        </div>
+        <div id="conversations">
+
+                <div id="charts">
+                  
+                </div> 
+            <div id="footer">
+                <div id="type-message">
+                    <input type="text" placeholder="Message">
+                </div>
+                <div id="send-message">
+                    <button class="fab fa-telegram-plane"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Appointment Section -->
+    <section id="book-appointment">
+        <div id="book-head">
+            <div id="appointment-search">
+                <input id="apt-searchBox" type="search" required>
+                <i class="icons fa fa-search"></i>
+            </div>
+            <span class="login-head">SCHEDULE APPOINTMENT</span>
+            <div style="display: flex; justify-content: center; align-items: center; width: 10%;">
+                <i class="icons fa fa-arrow-left" id="bckToDocPro5" style="color: white; width: 20px;"></i>
+                <i class="icons fa fa-arrow-left" id="bckToMainPage" style="color: white; width: 20px;"></i>
+    
+            </div>
+        </div>
+        <form>
+            <div class="form-group">
+                <label class="control-label">NAME </label>
+                <input id="person-name" name="patient_name" class="form-control" type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group" id="contact-email">
+                <div class="form-group">
+                    <label class="control-label">CONTACT </label>
+                    <input id="contact" name="patient_contact_number" class="form-control" type="number" placeholder="contact" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">EMAIL </label>
+                    <input id="email" name="patient_email" class="form-control" type="email" placeholder="email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">APPOINTMENT DATE </label>
+                <input id="appointment-date" name="appointment_date" class="form-control" type="date" placeholder="Appointment Date" required>
+            </div>
+            <div class="form-group">
+                <label class="control-label">APPOINTMENT TIME </label>
+                <input id="appointment-time" name="appointment_time" class="form-control" type="time" placeholder="Appointment Time" required>
+            </div>
+            
+            <textarea id="appointment-note" name="appointment_message" class="form-control" cols="30" rows="5" placeholder="APPOINTMENT MESSAGE" minlength="5" required></textarea>
+            
+            <button id="request-apt-btn" class="btn btn-primary btn-block">REQUEST APPOINTMENT</button>
+        </form>
+        <section id="appointmentDoctors" class="form-control">
+                <div id="page-doctors">
+    
+                </div>
+    
+            </section>
+    </section>
+
+
+    <!-- End section of sign up form -->
+  <!-- partial:partials/_footer.html -->
+    <div id="landing-page-footer">
+        <div id="tab-head-chat" class="footer-col">
+            <i id="icons" class="fa footer-col-icon">&#xf075;</i>
+            <h5 id="footerChatText">Chats</h5>
+        </div>
+        <div id="tab-head-posts" class="footer-col">
+            <i class="fa footer-col-icon">&#xf0f8;</i>
+            <h5 id="footerHospitalText">Hospitals</h5>
+        </div>
+        <div id="tab-head-other-doctors" class="footer-col">
+            <i class="fas fa-users"></i>
+            <h5 id="footerCallText">Doctors</h5>
+        </div>
+        <div id="tab-head-calls" class="footer-col">
+            <i class="fas footer-col-icon">&#xf484;</i>
+            <h5 id="footerCallText">Pharmacy</h5>
+        </div>
+        <div id="tab-head-notification" class="footer-col">
+            <i class="fas footer-col-icon">&#xf484;</i>
+            <h5 id="footerCallText">Notification</h5>
+        </div>
+    </div>
+
+    <!-- Vertically centered modal
+<div class="modal-dialog modal-dialog-centered">
+    ...
+  </div> -->
+
+    <!-- End section for the charts -->
+    <!-- plugins:js -->
+	<!-- <script src="assets/js/extended/uploadProfile.js"></script> -->
+	<!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="assets/js/material.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+    <script src="assets/js/sweet-alert.js"></script>
+
+    <!-- <script src="cordova.js"></script> -->
+    <script src="js/index.js"></script>
+
+    <!-- Custom JS Files -->
+
+    <script src="assets/js/extended/functions.js"></script>
+	
+    <script src="assets/js/extended/uploadProfile.js"></script>
+   
+	
+    <script src="assets/js/extended/custom.js"></script>
+    <!-- <script src="assets/js/extended/general-app.js"></script> -->
+    <script src="assets/js/extended/chats.js"></script>
+   
+
+    <script src="assets/js/extended/sidebar.js"></script>
+    <script src="assets/js/extended/doc-landingPage.js"></script>
+    <script src="./assets/js/hospital.js"></script>
+    <script src="assets/js/extended/phamarchy.js"></script>
+
+	<script>
+		var socket = io('https://docconnect2022.herokuapp.com/');
+	
+		var el;
+
+		socket.on('connection', function() {
+		console.log('');
+		});
+		
+		socket.on('message', (data) =>{
+            // getDocData()
+            // insertNewMessageBefor()
+            insertNewMessageBefor(data)
+
+
+			// display_doctorView();
+
+			if (JSON.stringify(data.fromUser) === JSON.stringify(localStorage.getItem("userID")) ){
+				console.log("nothing to do");
+			}
+			else{
+
+                instant_messsage(data)
+				// displayPreviousConversation(openChat[0],openChat[1],openChat[2])
+			}
+			
+			
+		});
+        
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doc-connect</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
+    <!-- End plugin css for this page -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/mdb.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <link rel="stylesheet" href="assets/css/general-app.css">
+    <link rel="stylesheet" href="assets/css/sync-section.css">
+    <link rel="stylesheet" href="assets/css/landingPage-section.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+    <link rel="stylesheet" href="assets/css/collect-section.css">
+
+    <link rel="stylesheet" href="assets/css/my-tasks-section.css">
+    <link rel="stylesheet" href="assets/css/home-section.css">
+    <link rel="stylesheet" href="./assets/css/landingPage-post.css">
+    <link rel="stylesheet" href="assets/css/landingPage-hospital.css">
+    <link rel="stylesheet" href="assets/css/landingPage-chat.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./css/doc_profile.css">
+    <link rel="stylesheet" href="./css/chats.css">
+    <link rel="stylesheet" href="../../fontawesome-free-5.10.2-web/css/all.min.css">
+    <!-- Save Modal links-->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+
+<body onload="textDecoration()">
+    <script src="assets/js/preloader.js"></script>
+
+    <div id="loader-cover2"></div>
+    <div id="loader2">
+        <span id="loader-msg2"></span>
+        <div class="loader2"></div>
+    </div>
+
+    <div class="body-wrapper">
+
+        <!-- partial:partials/_sidebar.html -->
+        <section id="sidebar-cover"></section>
+        <aside id="sidebar" class="mdc-drawer">
+
+            <div class="mdc-drawer__header">
+                <a href="index.html" class="brand-logo">
+                    <img src="assets/images/realLogo.png" class="logo" alt="logo">
+                </a>
+                <p class="brand-logo-text">Latex App</p>
+            </div>
+            <hr>
+            <div class="mdc-drawer__content">
+                <div class="mdc-list-group">
+
+                    <h6 class="login-user">
+
+                        <strong>Welcome Joe Paye</strong>
+                    </h6>
+                    <nav class="mdc-list mdc-drawer-menu">
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#" onclick="showProfileSection()">My Profile</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#" onclick="showDownloadSection()">Download Tappers &amp; Gangs</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Download Farmers</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Settings</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Help &amp; Support</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#" onclick="removeUserFromSession()">Logout</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- partial -->
+        <div>
+
+            <!-- partial:partials/_navbar.html -->
+            <div id="landing-page-header">
+
+
+                 <div id="nav_logo">
+                    <img src="assets/images/realLogo.png" width="15%" alt="logo" id="profile_img" class="sidebar-toggler"> <span class="chat_title"><strong>Chat</strong></span>
+                </div>
+
+
+
+                <div class="container">
+                    <div class="row height d-flex justify-content-center align-items-center">
+                        <div class="col-md-6">
+                            <div class="form"> <i class="fa fa-search"></i> <input type="text" class="form-control form-input" placeholder="Search anything..."> <span class="left-pan"><i class="fa fa-microphone"></i></span> </div>
+                        </div>
+                    </div>
+                </div>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option disabled selected>Fliter Specialist</option>
+                    <option value="1" >Eye</option>
+                    <option value="2">Bone</option>
+                    <option value="3">Liver</option>
+                    <option value="3">Brain</option>
+                  </select>
+                <div class="healthGroups">
+                    <a href=""> Join Health Groups</a>
+                </div> 
+
+                <!-- <div id="weigh-section" class="mdc-top-app-bar__row">
+                    <nav id="weigh-section-tab">
+                        <div class="tab-head" id="tab-head-chat"><strong>CHAT</strong></div>
+                        <div class="tab-head" id="tab-head-posts"><strong>Hospital</strong></div>
+                        <div class="tab-head" id="tab-head-calls"><strong>CALLS</strong></div>
+                    </nav>
+            </div> -->
+            </div>
+
+            <!-- Main page content -->
+              <section class="" style="display: block;"> 
+                <main class="content-wrapper"> 
+                    <!-- Home section -->
+                    <section style="display: block;" id="home-section"> 
+                        <div id="weigh-tab-section-content"> 
+                            <!-- Buy -->
+                             <div class="tab-content" id="tab-content-chat"> 
+                                <section class="page-wrapper md-toolbar-fixed-adjust">
+                                    <div id="friends">
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
+                                         
+                                            <div class="doc-flow">
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Miro Badev</strong>
+                                                    <strong>Brain surgan</strong>
+                                                </div>
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Followers</strong>
+                                                    <strong>1200</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2_copy.jpg" />
+                                         
+                                            <div class="doc-flow">
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Martin Joseph</strong>
+                                                    <strong>Heart surgan</strong>
+                                                </div>
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Followers</strong>
+                                                    <strong>1200</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend">
+                                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3_copy.jpg" />
+                                         
+                                            <div class="doc-flow">
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Tomas Kennedy</strong>
+                                                    <strong>Eye surgan</strong>
+                                                </div>
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Followers</strong>
+                                                    <strong>1200</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/4_copy.jpg" />
+                                           
+                                            <div class="doc-flow">
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Enrique Sutton</strong>
+                                                    <strong>Heart surgan</strong>
+                                                </div>
+                                                <div class="doc-flow-items">
+                                                    <strong class="doc-specs">Followers</strong>
+                                                    <strong>1200</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                          <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/5_copy.jpg" />
+                                           
+                                              <div class="doc-flow">
+                                                  <div class="doc-flow-items">
+                                                      <strong class="doc-specs">Darnell Strickland</strong>
+                                                      <strong>Heart surgan</strong>
+                                                  </div>
+                                                  <div class="doc-flow-items">
+                                                      <strong class="doc-specs">Followers</strong>
+                                                      <strong>1200</strong>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                    </div>
+                                </section> 
+                                <!-- <section style="display:block">
+                                    <div id="friends">
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
+                                            <p>
+                                                <strong>Miro Badev</strong>
+                                                <strong style="float: right;" class="followers">Followers</strong>
+
+                                                <br>
+                                                <span>Brain surgan</span>
+                                                <span style="float: right; margin-right:12px;">1200</span>
+
+                                            </p>
+                                        </div>
+
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2_copy.jpg" />
+
+                                            <p>
+                                                <strong>Martin Joseph</strong>
+                                                <strong style="float: right;" class="followers">Followers</strong>
+                                                <br>
+                                                <span>Heart Surgan</span>
+                                                <span style="float: right; margin-right:12px;">1200</span>
+                                            </p>
+
+                                        </div>
+
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3_copy.jpg" />
+                                            <p>
+                                                <strong>Tomas Kennedy</strong>
+                                                <strong style="float: right;" class="followers">Followers</strong>
+                                                <br>
+                                                <span>Eye</span>
+                                                <span style="float: right; margin-right:12px;">1200</span>
+                                            </p>
+
+                                        </div>
+
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/4_copy.jpg" />
+                                            <p>
+                                                <strong>Enrique Sutton</strong>
+                                                <strong style="float: right;" class="followers">Followers</strong>
+                                                <br>
+                                                <span>Heart Surgan</span>
+                                                <span style="float: right; margin-right:12px;">1200</span>
+                                            </p>
+
+                                        </div>
+
+                                        <div class="friend">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/5_copy.jpg" />
+                                            <p>
+                                                <strong>  Darnell Strickland</strong>
+                                                <strong style="float: right;" class="followers">Followers</strong>
+                                                <br>
+                                                <span>Heart Surgan</span>
+                                                <span style="float: right; margin-right:12px;">1200</span>
+                                            </p>
+                                            <div class="status inactive"></div>
+                                        </div>
+
+
+
+                                    </div>
+                                </section> -->
+
+
+                            </div>
+                            <!-- HOSPITALS -->
+                            <section id="hospitals" class="page-wrapper md-toolbar-fixed-adjust">
+                                <div class="row height d-flex justify-content-center align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="search"> <i class="fa fa-search"></i> <input id="myInput" type="text" class="form-control" placeholder="Have a question? Ask Now"> <button class="btn btn-primary">Search</button> </div>
+                                    </div>
+                                </div>
+
+                                <div id="myDIV">
+                                    <div class="card" style="margin-top:20px;">
+                                        <img src="./assets/images/jfk.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- POSTS -->
+                            <section id="post" style="display: none;">
+
+                                <div class="tab-content" id="tab-content-posts">
+                                    <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                                        posts
+                                    </section>
+                                </div>
+                            </section>
+                            <!-- CALLS -->
+                            <section id="calls" style="display: none;">
+                                <div class="tab-content" id="tab-content-calls">
+                                    <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                                        calls
+                                    </section>
+                                </div>
+                            </section>
+
+
+
+                        </div>
+                    </section>
+                </main>
+
+                <!-- This is the start section for the doctor's profile -->
+
+                <section id="doc-profile" style="display: none;">
+                    <div id="doc-profile-header">
+                        <div id="header-icons">
+                            <div class="fa fa-arrow-left"></div>
+                            <div class="fa fa-align-justify"></div>
+                        </div>
+                        <div id="doc-info">
+                            <div id="doc-profile-doc-img">
+                                <img src="./img/download (5).jpeg" alt="">
+                            </div>
+                            <div id="info">
+                                <span id="doc-name">Tina Llyod</span>
+                                <span id="specialized">Brain Doctor</span>
+                            </div>
+                        </div>
+                        <div id="doc-contacts">
+                            <div class="contacts-btn">
+                                <button>Chat</button>
+                            </div>
+                            <div class="contacts-btn">
+                                <button>Calls</button>
+                                <ul id="list-items">
+                                    <li class="fa fa-phone-alt"> Phone</li>
+                                    <li class="fa fa-video"> Video</li>
+                                </ul>
+                            </div>
+                            <div class="contacts-btn">
+                                <button>Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="about-div">
+                        <div id="about-doc">
+                            <span>ABOUT</span>
+                        </div>
+                        <div id="doc-status">
+                            <div class="status">
+                                <span class="status-title">Place Of Work:</span><span class="tilte-description">ELWA HOSPITAL</span>
+                            </div>
+                            <div class="status">
+                                <span class="status-title">Place Of Study:</span><span class="tilte-description">COTTINGTON UNIVERSITY</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="view-license" style="display: none;">
+                    <button>VIEW LICENSE</button>
+                </section>
+
+                <!-- This is the end section for the doctor's profile -->
+
+
+
+                <!-- start section for the charts -->
+                <section id="doc-conversation" style="display: none;">
+                    <div id="header">
+                        <div class="icons fa fa-arrow-left"></div>
+                        <div id="doc-img">
+                            <img src="./img/download (5).jpeg" alt="">
+                        </div>
+                        <div id="name">
+                            <span id="doc-name">Tina Llyod </span>
+                            <span id="active-time">last seen today at 3:05 PM</span>
+                        </div>
+                        <div class="icons fa fa-video"></div>
+                        <div class="icons fa fa-phone"></div>
+                        <div class="icons fa fa-align-justify"></div>
+                    </div>
+                    <div id="conversations">
+                        <div id="start-conversation">
+                            <div id="date-chart-starts">
+                                <span>
+                    March 29, 2022
+                </span>
+                            </div>
+                        </div>
+
+                        <div id="charts">
+                            <div class="user-text">
+                                <div class="message">
+                                    <span>
+                        Hello mate can read or listen to them.
+                        Hello mate can read or listen to them
+                        Hello mate can read or listen to them <sub>10:50 PM</sub>
+                    </span>
+                                </div>
+                            </div>
+                            <div class="user-response">
+                                <div class="response">
+                                    <span>
+                        Hello, how are you?
+                        can read or listen to them. <sub>10:48 PM</sub>
+                    </span>
+                                </div>
+                            </div>
+                            <div class="user-text">
+                                <div class="message">
+                                    <span>
+                        Hello mate can read or listen to them.
+                        Hello mate can read or listen to them
+                        Hello mate can read or listen to them <sub>10:50 PM</sub>
+                    </span>
+                                </div>
+                            </div>
+                            <div class="user-response">
+                                <div class="response">
+                                    <span>
+                        Hello, how are you?
+                        can read or listen to them. <sub>10:48 PM</sub>
+                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="footer">
+                            <div id="type-message">
+                                <div class="fa fa-grin"></div>
+                                <input type="text" placeholder="Message">
+                                <div class="fa fa-paperclip"></div>
+                                <div class="fa fa-camera"></div>
+                            </div>
+                            <div id="send-message">
+                                <button class="fab fa-telegram-plane"></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+              
+
+            </section>
+
+
+        </div>
+
+
+        <!-- End section of sign up form -->
+    </div>
+  <!-- partial:partials/_footer.html -->
+  <div id="landing-page-footer">
+     <div id="tab-head-chat" class="footer-col">
+        <i id="icons" class="fa footer-col-icon">&#xf075;</i>
+        <h5 id="footerChatText">Chat</h5>
+    </div>
+    <div id="tab-head-posts" class="footer-col">
+        <i class="fa footer-col-icon">&#xf0f8;</i>
+        <h5 id="footerHospitalText">Hospital</h5>
+    </div>
+    <div id="tab-head-calls" class="footer-col">
+        <i class="fas footer-col-icon">&#xf095;</i>
+        <h5 id="footerCallText">Calls</h5>
+    </div>
+</div>
+    <!-- End section for the charts -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="assets/js/material.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+    <script src="assets/js/sweet-alert.js"></script>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Custom JS Files -->
+    <script src="./assets/js/extended/functions.js"></script>
+    <!-- <script src="assets/js/extended/login.js"></script> -->
+    <script src="assets/js/extended/bottom-tabs.js"></script>
+
+    <script src="assets/js/extended/custom.js"></script>
+    <!-- <script src="assets/js/extended/general-app.js"></script> -->
+    <script src="assets/js/extended/home-section.js"></script>
+
+    <script src="assets/js/extended/sidebar.js"></script>
+
+    <script src="assets/js/extended/landingPage.js"></script>
+
+    <!-- <script src="assets/js/extended/estate.js"></script> -->
+</body>
+
+</html>

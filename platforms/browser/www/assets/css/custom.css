@@ -1,0 +1,232 @@
+/* nav bar search icon */
+
+#searchIcon {
+    margin-left: 90%;
+}
+
+.weightDetail {
+    margin-top: 7px;
+    text-align: center;
+}
+
+.padding {
+    padding: 22px;
+}
+
+input {
+    width: 315px;
+    height: 50px;
+    padding-right: 40px;
+}
+
+.camera-bg {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 30px;
+    height: 20px;
+    background: url(https://i.stack.imgur.com/5Vv2z.png) no-repeat;
+    background-position: 0 0;
+}
+
+.cancel {
+    float: right;
+    background-color: rgb(188, 178, 123);
+    border: none;
+    color: white;
+    padding: 5px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.weight-button {
+    float: right;
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 2px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.mdc-top-app-bar {
+    background: white;
+    padding-bottom: 42%;
+    border: 1px solid #dee2e6 !important;
+}
+
+.flote-button {
+    margin-top: 10px;
+}
+
+.collect-button {
+    float: right;
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 2px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 27px;
+}
+
+.button {
+    float: right;
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 5px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.pending_button {
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 2px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.downloads {
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 2px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.pending {
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 5px 45px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.pendings {
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 5px 45px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+h5 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.table-color {
+    background-color: rgb(188, 178, 123);
+}
+
+.cuplumps {
+    padding: 2px 35px;
+    background-color: #beb17a;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 0;
+}
+
+.label {
+    display: inline-block;
+}
+
+.cuplumps2 {
+    padding: 2px 55px;
+    border: 0;
+    background-color: #675c2f;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* save modal  */
+
+
+/* LOADER */
+
+#loader-cover2 {
+    height: 100vh;
+    width: 100%;
+    background: gray;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.5;
+    display: none;
+}
+
+#loader2 {
+    position: absolute;
+    margin-top: 20em;
+    margin-left: 46%;
+    z-index: 2;
+}
+
+.loader2 {
+    border: 16px solid #004a43;
+    border-radius: 50%;
+    border-top: 16px solid #fff;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    display: none;
+    animation: spin 1.4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

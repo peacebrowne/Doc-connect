@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AgroTrader</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
+    <!-- End plugin css for this page -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css"> -->
+
+    <!-- My custom css -->
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="assets/css/mdb.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <link rel="stylesheet" href="assets/css/general-app.css">
+    <link rel="stylesheet" href="assets/css/sync-section.css">
+    <link rel="stylesheet" href="assets/css/weigh-section.css">
+    <link rel="stylesheet" href="assets/css/collect-section.css">
+    <link rel="stylesheet" href="assets/css/buy-section.css">
+    <link rel="stylesheet" href="assets/css/my-tasks-section.css">
+    <link rel="stylesheet" href="assets/css/home-section.css">
+
+</head>
+
+<body onload="showProfileSection()">
+    <script src="assets/js/preloader.js"></script>
+
+    <div class="body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <section id="sidebar-cover"></section>
+        <aside id="sidebar" class="mdc-drawer">
+            <div class="mdc-drawer__header">
+                <a href="index.html" class="brand-logo">
+                    <img src="assets/images/realLogo.png" class="logo" alt="logo">
+                </a>
+                <p class="brand-logo-text">Latex App</p>
+            </div>
+            <hr>
+            <div class="mdc-drawer__content">
+                <div class="mdc-list-group">
+                    <h6 class="login-user">
+                        <strong>Welcome Joe Paye</strong>
+                    </h6>
+                    <nav class="mdc-list mdc-drawer-menu">
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="profile.html">My Profile</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Download Tappers &amp; Gangs</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Download Farmers</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Settings</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Help &amp; Support</a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">Logout</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- partial -->
+        <div class="main-wrapper mdc-drawer-app-content">
+
+            <!-- partial:partials/_navbar.html -->
+            <header class="mdc-top-app-bar">
+                <div class="mdc-top-app-bar__row">
+                    <div class="top-bar mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                        <button id="hamburger-icon" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
+
+                        <img id="logo1" src="assets/images/realLogo.png" class="logo" alt="logo">
+
+                        <i id="online-wifi-icon" class="fa wifi-icon">&#xf1eb;</i>
+
+                        <img height="30" width="30" src="./img/no-wifi.png" alt="offline-wifi" class="wifi-icon" id="offline-wifi-icon">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main page content -->
+            <section class="page-wrapper md-toolbar-fixed-adjust">
+                <main class="content-wrapper">
+                    <!-- Home section -->
+                    <section style="display: non;" id="home-section">
+                        <div class="mdc-layout-grid__cell--span-12">
+                            <div class="mdc-card">
+                                <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
+                                <h5 class="card-title card-title2">Monday, Jan&nbsp;24,&nbsp;2022&nbsp;9:30&nbsp;AM</h5>
+                                <h6 class="card-title card-title3">
+                                    <strong>OFFLINE DATA RECORDED</strong>
+                                </h6>
+                                <div class="statistics row">
+                                    <div class="col statistics-card">
+                                        <i class="fas statistics-card-icon">&#xf07a;</i>
+                                        <div class="col statistics-card-text">0</div>
+                                    </div>
+                                    <div class="col">
+                                        <i class="fa statistics-card-icon">&#xf017;</i>
+                                        <div class="col statistics-card-text">15</div>
+                                    </div>
+                                    <div class="col">
+                                        <i class='fas statistics-card-icon'>&#xf0d1;</i>
+                                        <div class="col statistics-card-text">26</div>
+                                    </div>
+                                    <div class="col">
+                                        <i class='fas statistics-card-icon'>&#xf0ae;</i>
+                                        <div class="col statistics-card-text">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Table numbers on cards -->
+                        <div class="table-num-cards">
+                            <div id="buy-card" class="table-num-card-item">
+                                <i class="fas card-icon">&#xf07a;</i>
+                                <div class="col card-text">BUY</div>
+                            </div>
+                            <div id="collect-card" class="table-num-card-item">
+                                <i class="fa card-icon">&#xf017;</i>
+                                <div class="col card-text">COLLECT</div>
+                            </div>
+                            <div id="weigh-card" class="table-num-card-item">
+                                <i class="fas card-icon">&#xf0d1;</i>
+
+                                <div class="col card-text">WEIGH BRIDGE</div>
+                            </div>
+                            <div id="my-tasks-card" class="table-num-card-item">
+                                <i class="fas card-icon">&#xf0ae;</i>
+                                <div class="col card-text">MY TASKS</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sync section -->
+                    <section id="sync-section" style="display: bloc;">
+                        <p id="sync-date" class="text-center">Monday, Jan 24, 2022 9:30AM</p>
+                        <div class="card text-center mb-2">
+                            <div class="card-header">Sync BUY Data</div>
+                            <div class="card-body d-grid">
+                                <p class="card-text">Total offline data: 10</p>
+                                <button class="btn btn-primary btn-lg">Sync Buy Data</button>
+                            </div>
+                        </div>
+                        <div class="card text-center mb-2">
+                            <div class="card-header">Sync COLLECT Data</div>
+                            <div class="card-body d-grid">
+                                <p class="card-text">Total offline data: 10</p>
+                                <button class="btn btn-primary btn-lg">Sync Collect Data</button>
+                            </div>
+                        </div>
+                        <div class="card text-center mb-2">
+                            <div class="card-header">Sync TASKS Data</div>
+                            <div class="card-body d-grid">
+                                <p class="card-text">Total offline data: 10</p>
+                                <button class="btn btn-primary btn-lg">Sync Tasks Data</button>
+                            </div>
+                        </div>
+                        <div class="card text-center mb-2">
+                            <div class="card-header">Sync WEIGHBRIDGE Data</div>
+                            <div class="card-body d-grid">
+                                <p class="card-text">Total offline data: 10</p>
+                                <button class="btn btn-primary btn-lg">Sync Weighbridge Data</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Announcement section -->
+                    <section id="announcement-section" style="display: bloc;">
+                        <p id="sync-date" class="text-center">Monday, Jan 24, 2022 9:30AM</p>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <p class="card-text">This is to inform all farmers that there will be an important meeting this Sunday at our regular meeting spot.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">3 mins ago</small>
+                            </div>
+                        </div>
+
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <p class="card-text">This is to inform all farmers that there will be an important meeting this Sunday at our regular meeting spot.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">1 hr ago</small>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text">This is to inform all farmers that there will be an important meeting this Sunday at our regular meeting spot.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Monday, Jan 24, 2022 9:30AM</small>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Buy section -->
+                    <section id="buy-section" style="display: bloc;">
+                        <nav id="buy-section-tab">
+                            <div class="tab-head" id="tab-head-cuplumps">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-buy-raw-latex">Raw Latex</div>
+                        </nav>
+                        <div id="buy-tab-section-content">
+                            <!-- Cuplumps -->
+                            <div class="tab-content" id="tab-content-cuplumps">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-tapper-collect">
+                                            <option selected>Select Farmer:</option>
+                                            <option value="1"></option>
+                                            <option value="2"></option>
+                                            <option value="3"></option>
+                                        </select>
+                                        <label for="select-tapper-collect">Select Farmer:</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="enter-weight-collect" placeholder="Enter Weight">
+                                        <label for="enter-weight-collect">Enter Weight (KG)</label>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Enter</button>
+
+                                </section>
+
+                                <section>
+                                    <h5>View Buys</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Farmer</th>
+                                                <th scope="col" style="white-space:nowrap;">Weight (KG)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                            </div>
+
+                            <!--Raw latex-->
+                            <div class="tab-content" id="tab-content-buy-raw-latex">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-farmer-buy">
+                                            <option selected>Select Farmer:</option>
+                                            <option value="1"></option>
+                                            <option value="2"></option>
+                                            <option value="3"></option>
+                                        </select>
+                                        <label for="select-farmer-buy">Select Farmer:</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="enter-volumn-buy" placeholder="Enter Weight">
+                                        <label for="enter-volumn-buy">Enter Volumn (L)</label>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 form-group mb-3">
+                                        <label for="calculate-drc-buy">Calculate DRC:</label>
+                                        <label class="switch">
+                                            <input id="calculate-drc-buy" type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" id="latexometer-buy" class="form-control" placeholder="Latexometer">
+                                        <label for="latexometer-buy">Latexometer</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" id="dry-rubber-buy" class="form-control" placeholder="Dry Rubber (KG)">
+                                        <label for="dry-rubber-buy">Dry Rubber (KG)</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Buy</button>
+                                </section>
+
+                                <section>
+                                    <h5>View Raw Latex</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Farmer</th>
+                                                <th scope="col">Gang</th>
+                                                <th scope="col">Volumn(L)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">300L</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">300L</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">300L</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Collect section -->
+                    <section id="collect-section" style="display: bloc;">
+                        <nav id="collect-section-tab">
+                            <div class="tab-head" id="tab-head-collect-cuplumps">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-collect-raw-latex">Raw Latex</div>
+                        </nav>
+
+                        <div id="collect-tab-section-content">
+                            <!-- collect cuplumps -->
+                            <div class="tab-content" id="tab-content-collect-cuplumps">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-tapper-collect">
+                                            <option selected>Select a tapper</option>
+                                            <option value="1">Tapper One</option>
+                                            <option value="2">Tapper Two</option>
+                                            <option value="3">Tapper Three</option>
+                                        </select>
+                                        <label for="select-tapper-collect">Select Tapper</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="enter-weight-collect" placeholder="Enter Weight">
+                                        <label for="enter-weight-collect">Enter Weight (KG)</label>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Enter</button>
+
+                                </section>
+
+                                <section>
+                                    <h5>View Collections</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Tapper</th>
+                                                <th scope="col">Gang</th>
+                                                <th scope="col" style="white-space:nowrap;">Weight (KG)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
+
+                            <!-- collect raw latex -->
+                            <div class="tab-content" id="tab-content-collect-raw-latex">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-tapper-collect">
+                                                <option selected>Select a tapper</option>
+                                                <option value="1">Tapper One</option>
+                                                <option value="2">Tapper Two</option>
+                                                <option value="3">Tapper Three</option>
+                                            </select>
+                                        <label for="select-tapper-collect">Select Tapper</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="enter-weight-collect" placeholder="Enter Weight">
+                                        <label for="enter-weight-collect">Enter Volumn (L)</label>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Enter</button>
+
+                                </section>
+
+                                <section>
+                                    <h5>View Raw Latex Collection</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Farmer</th>
+                                                <th scope="col">Gang</th>
+                                                <th scope="col" style="white-space:nowrap;">Weight (KG)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Please enter tapper weight (KG):</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/form/submit" method="post">
+                                                <div>
+                                                    <label class="modal-label" for="name">Dolo(11233):</label>
+                                                    <input type="phonenumber" id="name" placeholder="124.00" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="age">Johnson(12300):</label>
+                                                    <input type="text" id="age" name="age" placeholder="65.60" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tokpah(45678):</label>
+                                                    <input type="text" id="country" name="country" placeholder="82.80" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Yah(14230):</label>
+                                                    <input type="text" id="country" name="country" placeholder="110.40" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+
+
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="cancel" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="button">Enter</button></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal 2 -->
+                            <div class="modal fade" id="latex-collect-weight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Please enter tapper weight (KG):</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/form/submit" method="post">
+                                                <div>
+                                                    <label class="modal-label" for="name">Paye(11233):</label>
+                                                    <input type="phonenumber" id="name" placeholder="124.00" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="age">Yeaney(12300):</label>
+                                                    <input type="text" id="age" name="age" placeholder="65.60" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Dennis(45678):</label>
+                                                    <input type="text" id="country" name="country" placeholder="82.80" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Kollie(14230):</label>
+                                                    <input type="text" id="country" name="country" placeholder="110.40" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+                                                <div>
+                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
+                                                    <input type="text" id="country" name="country" placeholder="" />
+                                                </div>
+
+
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="cancel" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="button">Enter</button></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- Weigh section -->
+                    <section id="weigh-section" style="display: bloc;">
+                        <nav id="weigh-section-tab">
+                            <div class="tab-head" id="tab-head-buy">Buy</div>
+                            <div class="tab-head" id="tab-head-estate">Estate</div>
+                            <div class="tab-head" id="tab-head-shipment">Shipment</div>
+                        </nav>
+                        <div id="weigh-tab-section-content">
+                            <!-- Buy -->
+                            <div class="tab-content" id="tab-content-buy">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-farmer-buy">
+                                            <option selected>Select a farmer</option>
+                                            <option value="1">Farmer One</option>
+                                            <option value="2">Farmer Two</option>
+                                            <option value="3">Farmer Three</option>
+                                        </select>
+                                        <label for="select-farmer-buy">Select Farmer</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="vehicle-plate-buy" placeholder="Vehicle Plate">
+                                        <label for="vehicle-plate-buy">Vehicle Plate</label>
+                                    </div>
+
+                                    <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="gross-buy" placeholder="Gross">
+                                        <label for="gross-buy">Gross (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="tare-buy" placeholder="Tare">
+                                        <label for="tare-buy">Tare (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="net-buy" placeholder="Net">
+                                        <label for="net-buy">Net (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="storage-area-buy">
+                                            <option selected>Select a storage</option>
+                                            <option value="1">Storage One</option>
+                                            <option value="2">Storage Two</option>
+                                            <option value="3">Storage Three</option>
+                                        </select>
+                                        <label for="storage-area-buy">Storage Area</label>
+                                    </div>
+
+                                    <div id="btn-group">
+                                        <button type="button" class="btn btn-primary save-btn">Save</button>
+
+                                        <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </section>
+
+                                <p class="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
+                            </div>
+
+                            <!-- Estate -->
+                            <div class="tab-content" id="tab-content-estate">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-estate" placeholder="Date">
+                                        <label for="business-date-estate">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-estate">
+                                            <option selected>Select an estate</option>
+                                            <option value="1">Estate One</option>
+                                            <option value="2">Estate Two</option>
+                                            <option value="3">Estate Three</option>
+                                        </select>
+                                        <label for="select-estate">Select Farmer</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-employee-estate">
+                                            <option selected>Select an employee</option>
+                                            <option value="1">Employee One</option>
+                                            <option value="2">Employee Two</option>
+                                            <option value="3">Employee Three</option>
+                                        </select>
+                                        <label for="select-employee-estate">Select Employee</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="collection-number-estate" placeholder="Collection #">
+                                        <label for="collection-number-estate">Collection #</label>
+                                    </div>
+
+                                    <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="gross-estate" placeholder="Gross">
+                                        <label for="gross-estate">Gross (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="tare-estate" placeholder="Tare">
+                                        <label for="tare-estate">Tare (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="net-estate" placeholder="Net">
+                                        <label for="net-estate">Net (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="storage-area-estate">
+                                            <option selected>Select a storage</option>
+                                            <option value="1">Storage One</option>
+                                            <option value="2">Storage Two</option>
+                                            <option value="3">Storage Three</option>
+                                        </select>
+                                        <label for="storage-area-estate">Storage Area</label>
+                                    </div>
+
+                                    <div id="btn-group">
+                                        <button type="button" class="btn btn-primary save-btn">Save</button>
+
+                                        <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </section>
+
+                                <p class="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
+                            </div>
+
+                            <!-- Shipment -->
+                            <div class="tab-content" id="tab-content-shipment">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="shipment-number-shipment" placeholder="Shipment #">
+                                        <label for="shipment-number-shipment">Shipment #</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="vehicle-plate-shipment" placeholder="Vehicle Plate">
+                                        <label for="vehicle-plate-shipment">Vehicle Plate</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="driver-shipment" placeholder="Driver">
+                                        <label for="driver-shipment">Driver</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="container-number-shipment" placeholder="Container Number">
+                                        <label for="container-number-shipment">Container #</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="nri-seal-number-shipment" placeholder="NRI Seal Number">
+                                        <label for="nri-seal-number-shipment">NRI Seal #</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="lot-shipment" placeholder="Lot">
+                                        <label for="lot-shipment">Lot</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="departure-time-shipment" placeholder="Departure Time">
+                                        <label for="departure-time-shipment">Departure Time</label>
+                                    </div>
+
+
+
+                                    <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="gross-shipment" placeholder="Gross">
+                                        <label for="gross-shipment">Gross (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="tare-shipment" placeholder="Tare">
+                                        <label for="tare-shipment">Tare (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="crate-shipment" placeholder="Crate">
+                                        <label for="crate-shipment">Crate (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="destination-shipment">
+                                            <option selected>Select a storage</option>
+                                            <option value="1">Destination One</option>
+                                            <option value="2">Destination Two</option>
+                                            <option value="3">Destination Three</option>
+                                        </select>
+                                        <label for="destination-shipment">Destination</label>
+                                    </div>
+
+                                    <div id="btn-group">
+                                        <button type="button" class="btn btn-primary save-btn">Save</button>
+
+                                        <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </section>
+
+                                <p class="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Weigh statistics section -->
+                    <section id="weigh-statistics-section" style="display: bloc;">
+                        <nav id="weigh-statistics-section-tab">
+                            <div class="tab-head" id="tab-head-pending">Pending</div>
+                            <div class="tab-head" id="tab-head-submitted">Submitted</div>
+                        </nav>
+                        <div id="weigh-statistics-tab-section-content">
+                            <!-- Pending -->
+                            <div class="tab-content" id="tab-content-pending">
+                                <section class="buy-statistics">
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Farmer</th>
+                                                <th>Plate #</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>John Doe</td>
+                                                <td>3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>John Doe</td>
+                                                <td>3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th>
+                                                <td>John Doe</td>
+                                                <td>3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                                <section class="estate-statistics">
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Estate</th>
+                                                <th>Collection</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>Estate 1</td>
+                                                <td>3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>Estate 2</td>
+                                                <td>3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th>
+                                                <td>Estate 2</td>
+                                                <td>3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                                <section class="shipment-statistics">
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Plate</th>
+                                                <th>Shipment</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>T4378</td>
+                                                <td>W3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th>
+                                                <td>T4837</td>
+                                                <td>R3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th>
+                                                <td>T5894</td>
+                                                <td>N3748</td>
+                                                <td>01-21-2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
+
+                            <!-- Submitted -->
+                            <div class="tab-content" id="tab-content-submitted">
+                                <h3>Submitted</h3>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- My tasks section -->
+                    <section id="my-tasks-section" style="display: bloc;">
+                        <nav id="my-tasks-section-tab">
+                            <div class="tab-head" id="tab-head-task-list">Task List</div>
+                            <div class="tab-head" id="tab-head-completed">Completed</div>
+                        </nav>
+                        <div id="my-tasks-tab-section-content">
+                            <!-- Task List section -->
+                            <div class="tab-content" id="tab-content-task-list">
+
+                                <section>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" style="text-align: center;">Title</th>
+                                                <th scope="col" colSpan="2" style="text-align: center; white-space: nowrap">Assign To</th>
+                                                <th scope="col" style="text-align: center;">Due Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Clear farm for planting</td>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Clear farm for planting</td>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Clear farm for planting</td>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 6px 10px 60px 10px; border-radius: 5px; margin-top: 50px">
+                                    <h5 style="text-align: center;">ADD TASK</h5>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="task-name" placeholder="Task Name">
+                                        <label for="task-name">Task Name</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <textarea style="height: 100px" class="form-control" id="task-details" cols="34" placeholder="Please enter the details for this task"></textarea>
+                                        <label for="task-details">Details</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="due-date" placeholder="Due Date">
+                                        <label for="due-date">Due Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="assign-to">
+                                            <option selected>Select a staff</option>
+                                            <option value="1">Staff One</option>
+                                            <option value="2">Staff Two</option>
+                                            <option value="3">Staff Three</option>
+                                        </select>
+                                        <label for="assign-to">Assign To</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                </section>
+                            </div>
+
+
+                            <!-- Completed task section -->
+                            <div class="tab-content" id="tab-content-completed">
+                                <h3>Completed</h3>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+            </section>
+
+            <!-- partial:partials/_footer.html -->
+            <footer>
+                <div id="home-icon" class="home_footer col footer-col">
+                    <i class="fa footer-col-icon">&#xf015;</i>
+                    <div class="col footer-col-text">HOME</div>
+                </div>
+                <div id="sync-icon" class="sync_footer col footer-col">
+                    <i class="fa footer-col-icon">&#xf021;</i>
+                    <div class="col footer-col-text">SYNC</div>
+                </div>
+                <div id="announcement-icon" class="announcement_footer col footer-col">
+                    <i class="fas footer-col-icon">&#xf0a1;</i>
+                    <div class="col footer-col-text">ANNOUNCEMENT</div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="assets/js/material.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/mdb.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap5.min.js"></script>
+
+        <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script> -->
+
+    <script src="assets/js/sweet-alert.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
