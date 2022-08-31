@@ -49,96 +49,181 @@ function received_ID(id){
 
 apt_Request_Btn.addEventListener('click',ev =>{
     ev.preventDefault();
-    appoitmentInfo()
+    appointmentInfo()
      
    
 
 })
 
-
-function appoitmentInfo(){
-    let allAptInput = document.querySelectorAll('#book-appointment form .form-group input')
-    let textArea = document.getElementById('appointment-note')
-    let info = {}
-    let counter = 0;
-
-    // validating for empty appointment input field
-    for(let i = 0; i < allAptInput.length; i++){
-       let input = allAptInput[i]
-        // if any input field is empty throw error message is exit iteration
-        if(input.value == ''){
-            Swal.fire({
-                icon: 'error',
-                title: `Please enter the empty input field`,
-                confirmButtonText: "Close"
-            })
-            break;
-        }else{
-            
-            info['doctorId'] = Number(receiverID);
-            info['patientId'] = Number(localStorage.getItem('userID'))
-            info[input.name]= input.value;
-            counter++
-        }
-    }
-
-    // if counter is equal to the length of all the 
-    // appointment form
-    if(counter == allAptInput.length){
-
-        info[textArea.name] = textArea.value;
-       
-        // passing current appoint for validation
-        validateAppointment(info)
-
-    }
+const appointmentInfo = () =>{
+    // get input data
+    let input = document.querySelectorAll('#book-appointment form input')
+    let apt_note = document.querySelector('#book-appointment form textarea')
     
+    validate_apt_info(input,apt_note)
+
 }
 
-// validating previous Apptment
-function validateAppointment(info){
+const validate_apt_info = (input,note) => {
+    let name
+    let info = {};
+
+    // iterate form to get all data.
+    for(const i of input){
+        if(i.value == ''){
+            name = i.name.split('_')[1];
+            Swal.fire({
+                icon: 'error',
+                title: `Please enter the ${name} field`,
+                confirmButtonText: "Close"
+            })
+            return;
+        }
+
+        info[i.name] = i.value;
+    }
+
+    // validate for valid contact number.
+    let contact = contact_validation(info['patient_contact_number']);
+    if(contact == 'error') return;
+
+    // validate for valid contact number.
+    let email = email_validation(info['patient_email'])
+    if(email == 'error') return;
+
+    // validate for valid appointment data.
+    let date = date_validation(info['appointment_date'])
+    if(date == 'error') return;
+
+    // check if appointment note is empty.
+    if(note.value == ''){
+        name = note.name.split('_')[1]
+        Swal.fire({
+            icon: 'error',
+            title: `Please enter the ${name} field`,
+            confirmButtonText: "Close"
+        })
+        return;
+    }
+
+    info[note.name] = note.value;
+    info['doctorId'] = Number(receiverID);
+    info['patientId'] = Number(localStorage.getItem('userID'))
+    
+    console.log(info)
+    submit_appointment(info)
+    // validate_existing_apts(info)
+
+}
+
+const date_validation = date => {
+    
+    // let apt_date = Array.of(date).flatMap(d => d.split('-')) 
+    let apt_date = date.split('-') 
+    let apt_year = +apt_date[0]
+    let apt_month = +apt_date[1]
+    let apt_day = +apt_date[2]
+
+    let current_date = new Date();
+    let year = +current_date.getFullYear();
+    let month = +current_date.getMonth()+1;
+    let day = +current_date.getDate();
+
+    if(apt_year < year){
+        Swal.fire({
+            icon: 'error',
+            title: `Invalid!
+                    Appointed year has passed.
+                    `,
+            confirmButtonText: "Close"
+        })
+        return 'error';
+    }
+
+    if(apt_month < month ){
+        Swal.fire({
+            icon: 'error',
+            title: `Invalid!
+                    Appointed month has passed.
+                    `,
+            confirmButtonText: "Close"
+        })
+        return 'error';
+    }
+
+    if(apt_day < day){
+        Swal.fire({
+            icon: 'error',
+            title: `Invalid!
+                    Appointed day has passed.
+                    `,
+            confirmButtonText: "Close"
+        })
+        return 'error';
+    }
+
+}
+
+// contact vaidation function
+const contact_validation = contact =>{
+
+    if(contact.length === 9 || contact.length === 10){
+        return contact;
+    }
+
+    Swal.fire({
+        icon: 'error',
+        title: `Invalid Phone Number.
+                Digits should be at most 9 or 10.`,
+        confirmButtonText: "Close"
+    })
+    return 'error';
+
+}
+
+// email validation function
+const email_validation = email =>{
+
+    if(email.includes('@gmail.com') || email.includes('@yahoo.com')) return email;
+    
+    Swal.fire({
+        icon: 'error',
+        title: `Invalid Email Address.
+                Email should be. ex: "abc@gmail".`,
+        confirmButtonText: "Close"
+    })
+    return 'error';
+
+}
+
+// validate for an existent data and time
+const validate_existing_apts = info => {
     makeAPIGetRequest(`${URL}/api/getAppointments`)
     .then(data => {
-        // getting all appointments from db 
-        let result = data[0]
-        console.log(result)
-        let counter = 0;
-       
-        for(let i = 0; i < result.length; i++){
-            let apt = result[i]
-              // checking if current apt time and date is same to each apt time and date from db
-              if(info.doctorId == apt.doctorId && info.patientId == apt.patientId && info.appointment_time == apt.appointment_Time){
-                
-                Swal.fire({
-                    icon: 'error',
-                    title: 'You" already schedule an appointment with this date and time',
-                    confirmButtonText: "Close"
-                })
-                break;
-            }else {
-                counter++
-            }
-        }
+        // let current_date = info.appointment_date;
         
-        if(counter == result.length){
-            
-            submitAppointment(info)
-            // reset all input field to empty
+        let appointments = data[0];
+        console.log(appointments)
+        // let same_appointment = appointments.find(apt => {
+        //     let date = apt.appointment_date.split('T')[0];
+        //     // date === current_date;
+        // })
 
-             reInitializeForm()
-          
-        }
     })
+
+}
+const submit_appointment = info =>{
+    makeAPIPostRequest(`${URL}/api/make_appointment`,info)
 
 }
 
 // Submitting 
-function submitAppointment(info){
 
+// function submitAppointment(info){
     
-    makeAPIPostRequest(`${URL}/api/make_appointment`,info)
+//     makeAPIPostRequest(`${URL}/api/make_appointment`,info)
     
-}
+// }
 
 
 // function is displaying doctors or both appointment and chat

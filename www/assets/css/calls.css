@@ -1,0 +1,110 @@
+#calling{
+    z-index: 1;
+    background-color: aqua;
+    border: none;
+}
+#calling-items{
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 840px;
+    border: none;
+    /* background-color: aqua; */
+    /* justify-content: space-evenly; */
+}
+
+#end-call{
+    width: 30%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+#info{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 70px;
+    border: none;
+}
+#call-img{
+    margin:3% 0px; 
+    width: 50%; 
+    height: 150px; 
+    border-radius: 50px;
+    border: none;
+}
+#call-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#end-callBtn{
+    background-color: #c90028;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#call-info{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+#call-bottom{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin-top: 3%;
+    height: 70px;
+    /* border: none; */
+}
+#extra-info{
+    width: 70%;
+    height: 80%;
+    margin: auto 0px;
+    /* background-color: orchid; */
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    align-items: center;
+    border: none;
+}
+#extra-info i{
+    font-size: large;
+}
+
+#ans_or_cancel{
+    height: 100px;
+    display: none;
+    justify-content: space-between;
+    width: 95%;
+    margin: -100px auto;
+    border:none;
+}
+#ans_or_cancel a{
+    border-radius: 100px;
+    width: 30%;
+    font-size: x-large;
+}
+#cancel-callBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0%;
+    background-color: #c90028;
+}
+#ans-callBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(37, 175, 111);
+    margin-left: -1%;
+}

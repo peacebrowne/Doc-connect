@@ -13,14 +13,11 @@ document.querySelector("#tab-head-chat").addEventListener('click', (e) => {
     document.getElementById("footerChatText").style.color = "#000";
     showElement(current_weigh_section);
     setAsActive(current_weigh_tab_head);
-    showElement('#landing-page-header')
-
 })
 
 document.querySelector("#tab-head-calls").addEventListener('click', () => {
     let name = 'Order Medicine'
     current_section_name.textContent = name;
-    // document.getElementById("icons").style.color = null;
     hideElement(current_weigh_section);
     setAsInactive(current_weigh_tab_head);
     current_weigh_section = "#calls";
@@ -28,34 +25,19 @@ document.querySelector("#tab-head-calls").addEventListener('click', () => {
     document.getElementById("footerCallText").style.color = "#000";
     showElement(current_weigh_section);
     setAsActive(current_weigh_tab_head);
-    showElement('#landing-page-header')
-
 })
 
 document.querySelector("#tab-head-doc").addEventListener('click', () => {
     let name = 'Doctor Profile'
     current_section_name.textContent = name;
     hideElement(current_weigh_section);
-    showElement('#landing-page-header')
-    // document.getElementById("icons").style.color = null;
     setAsInactive(current_weigh_tab_head);
     current_weigh_section = "#doc-profile";
     current_weigh_tab_head = "#tab-head-doc";
-    // document.getElementById("footerHospitalText").style.color = "#000";
     showElement(current_weigh_section);
     setAsActive(current_weigh_tab_head);
     document.getElementById('more-about-doc').style.display ='none'
 })
-
-
-// let student_sidebar_picture = document.getElementById('sidebarProfileImg')
-
-// let img = localStorage.getItem('profile-picture');
-
-// student_sidebar_picture.src = img;
-
-// let profile_picture = document.querySelector('#nav_logo img')
-// profile_picture.src = img;
 
 
 // chat with doctor section starts here
@@ -90,27 +72,39 @@ let hide_and_show = ()=>{
 let receiver_pic = document.querySelector('#doc-img .incoming-img img')
 receiver_pic.src = localStorage.getItem('profile-picture')
 let doctor_name = document.querySelector('#doc-conversation #header #name #doc-name')
-let studentID = localStorage.getItem('studentID')
-let assign_doctor = Number(localStorage.getItem('assign-doctor'))
-
-
+let studentID = localStorage.getItem('userID')
+let assign_doctor = +localStorage.getItem('assign-doctor')
+let a_d = String(assign_doctor)
+// let stdID = localStorage.getItem('userID')
 const openMessage = () => {
    
     makeAPIGetRequest(`${URL}/api/get_users`)
     .then(data => {
 
         let doctor = data[0].find(name => name.ID === assign_doctor);
-        console.log(doctor)
 
         document.querySelector('.incoming-img img').src = doctor.profile_pic
-
+        let name = localStorage.getItem('user-name');
         if(doctor != undefined){
             doctor_name.textContent = `${doctor.first_Name} ${doctor.last_Name}`
               // displaying previous conversation between student and doctor
               previousMessages(studentID,assign_doctor,doctor.profile_pic)
 
         }
-        getUsersId(assign_doctor,studentID,doctor.profile_pic)
+        getUsersId(a_d,studentID,doctor.profile_pic,name)
+
+        caller = {
+            id: studentID,
+            name: name,
+            pic: localStorage.getItem('profile-pic')
+        }
+
+        call_reciever = {
+            id: a_d,
+            name: `${doctor.first_Name} ${doctor.last_Name}`,
+            pic: doctor.profile_pic
+        }
+        callerID(caller,call_reciever)
 
     })
 }
@@ -123,14 +117,15 @@ const chatsMessages = document.getElementById('charts')
 let previousMessages = (stdID,docID,image) =>{
     studentId = stdID;
     doctorId = docID;
+    let dID = String(docID)
 
     makeAPIGetRequest(`${URL}/api/getMessage`)
     .then(data => {
 
-        let messages = data[0];
+        let messages = data[0].filter(msg => msg.from_user === stdID && msg.to_user === dID || msg.from_user === dID && msg.to_user === stdID);
         messages.forEach(msg => {
             
-            if(msg.from_user == stdID && msg.to_user == docID){
+            if(msg.from_user == stdID){
                 let receivedDiv = document.createElement('div')
                 receivedDiv.classList.add('user-response')
                
@@ -150,7 +145,7 @@ let previousMessages = (stdID,docID,image) =>{
                 chatsMessages.appendChild(receivedDiv)
 
             }else{
-                if(msg.to_user == stdID && msg.from_user == docID){
+                if(msg.to_user == stdID){
                     let sendDiv = document.createElement('div')
                     sendDiv.classList.add('user-text')
 
@@ -185,7 +180,7 @@ let previousMessages = (stdID,docID,image) =>{
 
 
 // student appointment with doctor
-const studentName = document.getElementById('student-name')
+// const studentName = document.getElementById('student-name')
 const studentContact = document.getElementById('student-contact')
 const studentEmail = document.getElementById('student-email')
 const studentClass = document.getElementById('student-class')
@@ -206,11 +201,10 @@ appointmentDiv.addEventListener('click', (ev)=>{
 let student_appointment_info = ()=>{
     
     let info ={
-        student_name: studentName.value,
+        student_name: localStorage.getItem('user-name'),
         student_contact: studentContact.value,
-        student_email: studentEmail.value,
         student_class: studentClass.value,
-        student_id: localStorage.getItem('studentID'),
+        student_id: localStorage.getItem('userID'),
         school_name: localStorage.getItem("school-name"),
         apt_date: aptDate.value,
         apt_time: aptTime.value,
@@ -223,7 +217,6 @@ let student_appointment_info = ()=>{
 }
 
 let allAptInput = document.querySelectorAll('#book-appointment form input')
-
 
 let validate_student_apt= info =>{
 
@@ -300,4 +293,33 @@ book_emergency.addEventListener('click', ()=>{
     hideElement('#home-section')
     hideElement('#container-fluid')
     showElement('#hospitals')
+    
 })
+
+// Doctor Profile
+
+const doctor_profile_name = document.querySelector('#doc-profile #doc-name');
+const doctor_profile_img = document.querySelector('#doc-profile img')
+const doctor_profile_specialization = document.querySelector('#doc-profile #specialization')
+let default_picture = "https://doc-connect.s3.us-east-2.amazonaws.com/avater.png"
+
+const doctor_profile = () => {
+    makeAPIGetRequest(`${URL}/api/get_users`)
+    .then(data => {
+    
+        let profile = data[0].find(name => name.ID === assign_doctor)
+
+        doctor_profile_name.textContent = `DR.${profile.first_Name} ${profile.Middle_Name} ${profile.last_Name}`
+        doctor_profile_img.src = profile.profile_pic;
+        doctor_profile_specialization.textContent = `${profile.specialization}`
+
+        if(default_picture === profile.profile_pic){
+
+            doctor_profile_img.style.cssText = "width:150px; margin: 15% auto;";
+            doctor_profile_name.style.cssText = 'height: 10px;';
+
+        }
+    })
+
+}
+doctor_profile()

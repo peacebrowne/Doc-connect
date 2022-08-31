@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/demo/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
-
+    <link rel="stylesheet" href="./assets/css/calls.css">
 
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -113,9 +113,15 @@
                 <input id="searchBox" type="search" required>
                 <i class="fa fa-search"></i>
             </form>
+            <div id="improvise" style="display: none;"></div>
+
+            <form id="hospitalSearchBox" action="">
+                <input id="searchBox" type="search" required>
+                <i class="fa fa-search"></i>
+            </form>
         </div>
 
-      <div id="searches">
+      <div id="searches" style="display: none;">
             <select  id="filter-search">
                 <option disabled selected>Fliter Specialist</option>
                 <option value="All">All</option>
@@ -131,7 +137,7 @@
 
     <!-- Main page content -->
        <!-- Main page content -->
-       <main id="landing-page-main"> 
+<main id="landing-page-main"> 
         <section id="home-page">
             <div id="landing-page-friends" style="overflow-y: scroll;">
 				
@@ -142,7 +148,7 @@
 
         <!-- HOSPITALS -->
         <section id="hospitals">
-            <div id="booking-emegency-header">
+            <div id="booking-emegency-header" class="form-control">
                 <div style="display: flex; justify-content: center; align-items: center; width: 50px;">
                     <img  src="assets/images/realLogo.png" width="15%" alt="logo" id="profile_img" class="sidebar-toggler"> 
                 </div>
@@ -168,7 +174,7 @@
                     </p>
                     <p class="card-text">Rooms Avaliable:10</p>
 
-                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                <a href="#" class="btn btn-primary emergency-btn">BOOK EMERGENCY</a>
                 </div>
             </div>
 
@@ -183,7 +189,7 @@
                     </p>
                     <p class="card-text">Rooms Avaliable:10</p>
 
-                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                <a href="#" class="btn btn-primary emergency-btn">BOOK EMERGENCY</a>
                 </div>
             </div>
 
@@ -198,7 +204,7 @@
                     </p>
                     <p class="card-text">Rooms Avaliable:10</p>
 
-                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                <a href="#" class="btn btn-primary emergency-btn">BOOK EMERGENCY</a>
                 </div>
             </div>
 
@@ -213,7 +219,7 @@
                     </p>
                     <p class="card-text">Rooms Avaliable:10</p>
 
-                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                <a href="#" class="btn btn-primary emergency-btn">BOOK EMERGENCY</a>
                 </div>
             </div>
 
@@ -228,7 +234,7 @@
                     </p>
                     <p class="card-text">Rooms Avaliable:10</p>
 
-                <a href="#" class="btn btn-primary">BOOK EMERGENCY</a>
+                <a href="#" class="btn btn-primary emergency-btn">BOOK EMERGENCY</a>
                 </div>
             </div>
 
@@ -241,7 +247,7 @@
 
             <div class="tab-content" id="tab-content-posts">
                 <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
-                    Notification
+                    <div class="form-control"></div>
                 </section>
             </div>
         </section>
@@ -491,7 +497,36 @@
 
         </section>
 
-    </main>
+</main>
+
+    <!-- EMERGENCY -->
+    <section id="booking-emergency">
+
+        <div id="booking-emegency-header">
+
+            <div id="icon" style="display: flex; justify-content: center; align-items: center; width: 50px;">
+                <i class="icons fa fa-arrow-left"></i>
+            </div>
+
+            <span class="login-head" style="font-weight: bold;">Book Emergency</span>
+            <div style="width: 40px;"></div>
+        </div>
+
+        <div id="emergency-title" class="form-control">
+            <h6> What Do You Need?</h6>
+        </div>
+        <div id="emergency-needs" class="form-control">
+            <button class="needs form-control">
+                <span><i class="fa fa-ambulance"></i> Ambulance</span>
+            </button>
+            <button class="needs form-control">
+                <span><i class="fa fa-first-aid"></i> First Aid</span>
+            </button>
+            <button class="needs form-control">
+                <span><i class="fa fa-phone-alt"></i> Quick Response</span>
+            </button>
+        </div>
+    </section>
 
     <!-- This is the start section for the doctor's profile -->
 
@@ -560,7 +595,7 @@
     <section id="doc-conversation" style="display: none;">
         <div id="header">
             <div id="doc-img">
-				<a href="doctor.html"" class="icons fa fa-arrow-left"></a>
+				<a href="doctor.html" class="icons fa fa-arrow-left"></a>
                  <div class="incoming-img" id="div-img">
                     <img src="" width="40px" height="40px" style="border-radius: 50px;" alt="">
                  </div>
@@ -640,10 +675,53 @@
             </section>
     </section>
 
+    <section id="calling" style="display: none;">
 
+        <div id="calling-items" class="form-control">
+            
+            <div id="call-info" class="form-control">
+
+                <div id="call-img" class="form-control">
+                    <img src="" alt="">
+                </div>
+                <div id="info" class="form-control">
+                    <span style="font-size: x-large;">Emmanuel Browne</span>
+                    <span>Calling</span>
+                </div>
+                
+            </div>
+
+            <div id="ans_or_cancel" class="form-control">
+
+                <a id="ans-callBtn" class="btn btn-primary btn-block">
+                    <i class="fa fa-phone"></i>
+                </a> 
+
+                <a id="cancel-callBtn" class="btn btn-primary btn-block">
+                    <i class="fa fa-phone-slash"></i>
+                </a>
+
+            </div>
+
+            <div id="call-bottom" class="form-control">
+                <div id="extra-info" class="form-control">
+                    <i class="fa fa-microphone-slash"></i>
+                    <i class="fa fa-volume-off"></i>
+                </div>
+
+                <div id="end-call" class="form-control">
+                    <a id="end-callBtn" class="btn btn-primary btn-block">
+                        <i class="fa fa-phone-slash"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
     <!-- End section of sign up form -->
   <!-- partial:partials/_footer.html -->
-    <div id="landing-page-footer">
+    <div id="landing-page-footer" class="form-control">
         <div id="tab-head-chat" class="footer-col">
             <i id="icons" class="fa footer-col-icon">&#xf075;</i>
             <h5 id="footerChatText">Chats</h5>
@@ -660,8 +738,8 @@
             <i class="fas footer-col-icon">&#xf484;</i>
             <h5 id="footerCallText">Pharmacy</h5>
         </div>
-        <div id="tab-head-notification" class="footer-col">
-            <i class="fas footer-col-icon">&#xf484;</i>
+        <div id="tab-head-notification" style="margin: 0px 4%;" class="footer-col">
+            <i class="fas fa-bell"></i>
             <h5 id="footerCallText">Notification</h5>
         </div>
     </div>
@@ -702,7 +780,7 @@
 
     <script src="assets/js/extended/functions.js"></script>
 	
-    <script src="assets/js/extended/uploadProfile.js"></script>
+    <!-- <script src="assets/js/extended/uploadProfile.js"></script> -->
    
 	
     <script src="assets/js/extended/custom.js"></script>
@@ -714,38 +792,13 @@
     <script src="assets/js/extended/doc-landingPage.js"></script>
     <script src="./assets/js/hospital.js"></script>
     <script src="assets/js/extended/phamarchy.js"></script>
-
+    <script src="./assets/js/extended/socket.js"></script>
 	<script>
-		var socket = io('https://docconnect2022.herokuapp.com/');
-	
-		var el;
-
-		socket.on('connection', function() {
-		console.log('');
-		});
-		
-		socket.on('message', (data) =>{
-            // getDocData()
-            // insertNewMessageBefor()
-            insertNewMessageBefor(data)
-
-
-			// display_doctorView();
-
-			if (JSON.stringify(data.fromUser) === JSON.stringify(localStorage.getItem("userID")) ){
-				console.log("nothing to do");
-			}
-			else{
-
-                instant_messsage(data)
-				// displayPreviousConversation(openChat[0],openChat[1],openChat[2])
-			}
-			
-			
-		});
-        
-
 	</script>
+
+    <script src="./assets/js/extended/calls.js"></script>
+    <script src="./assets/js/book-emergency.js"></script>
+
 </body>
 
 </html>

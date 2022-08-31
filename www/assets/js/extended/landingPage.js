@@ -15,6 +15,8 @@ chats_section.addEventListener('click', (e) => {
     setAsActive(current_weigh_tab_head);
     search_anything.value = ''
     showElement('#schedule-appointment')
+    showElement('#doctorSearchBox')
+    hideElement('#improvise')
 
 })
 
@@ -34,7 +36,8 @@ doctors_section.addEventListener('click', (e) => {
     setAsActive(current_weigh_tab_head);
     search_anything.value = ''
     showElement('#schedule-appointment')
-
+    showElement('#doctorSearchBox')
+    hideElement('#improvise')
 })
 
 let hospital_section = document.querySelector("#tab-head-posts")
@@ -53,7 +56,7 @@ hospital_section.addEventListener('click', () => {
     showElement(current_weigh_section);
     setAsActive(current_weigh_tab_head);
     search_anything.value = ''
-   
+    showElement('#doctorSearchBox')
 })
 
 let pharmacy_section = document.querySelector("#tab-head-calls")
@@ -74,6 +77,8 @@ pharmacy_section.addEventListener('click', () => {
     search_anything.value = ''
     showElement('#landing-page-header')
     hideElement('#schedule-appointment')
+    hideElement('#doctorSearchBox')
+    showElement('#improvise')
 })
 
 

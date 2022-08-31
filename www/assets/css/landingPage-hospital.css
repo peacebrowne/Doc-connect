@@ -47,7 +47,7 @@
     align-items: center;
     justify-content: space-evenly;
     position: sticky;
-    top: 56px;
+    top: 51px;
     z-index: 1;
 }
 #hospital-question input{
@@ -98,4 +98,11 @@
 .btn-primary{
     margin-left: 5%;
     background-color:rgb(170, 17, 17);
+}
+
+#emg-opt{
+    border: none;
+}
+#emergency-option{
+    display: none;
 }

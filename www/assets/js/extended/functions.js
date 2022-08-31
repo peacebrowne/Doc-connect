@@ -272,7 +272,11 @@ function get_users_messages (friends,messages){
     // pass all doc friends for sortting
     sort_messages(last_msg)
     let all_Doc_friends = document.querySelectorAll('.frd')
-    chatBox(all_Doc_friends)
+    setTimeout(() => {
+
+        all_Doc_friends.forEach(friend =>  chatBox(friend))
+
+    },1000)
 }
 
 
@@ -342,12 +346,13 @@ let display_user_message = friend =>{
         `
     }
 
-    setTimeout(()=>{
+    // setTimeout(()=>{
           
         friend_div.innerHTML = info;
         doc_friends.appendChild(friend_div)
+
         
-    },1000)
+    // },1000)
  
 }
 
@@ -386,11 +391,14 @@ let user_Id;
 
 let picture = document.querySelector('#doc-img img')
 let friend_name = document.querySelector('#name #doc-name')
-
+let caller;
+let call_reciever;
+let usr_name = localStorage.getItem('user-name')
 // opening chat box between doctor and friend
-let chatBox = doc_friends =>{
 
-    doc_friends.forEach(friend => {
+let chatBox = friend =>{
+
+    // doc_friends.forEach(friend => {
 
         friend.addEventListener('click', () => {
 
@@ -406,13 +414,24 @@ let chatBox = doc_friends =>{
 
             friend_name.textContent = chat_friend_name;
             picture.src = chat_friend_pic;
-            
-            getUsersId(chat_friend_id,user_Id,chat_friend_pic,localStorage.getItem('user-name'))
+            caller = {
+                id: user_Id,
+                name: usr_name,
+                pic: localStorage.getItem('profile-pic')
+            }
+
+            call_reciever = {
+                id: chat_friend_id,
+                name: chat_friend_name,
+                pic: chat_friend_pic
+            }
+            callerID(caller,call_reciever)
+            getUsersId(chat_friend_id,user_Id,chat_friend_pic,usr_name)
             displayPreviousConversation(chat_friend_id,user_Id,chat_friend_pic)
         })
 
 
-    })
+    // })
 
 }
 
@@ -424,17 +443,17 @@ function insertNewMessageBefor(data){
     let new_msg = data;
 
     // check if new message from db is for user
-    if(new_msg.to_user === userID){
+    if(new_msg.toUser === userID){
 
         // if true, get all doctor friends that've sent message
         let allFriends = document.querySelectorAll('.friend #docId')
-        let doc_id = Array.from(allFriends).find(id => id.textContent === new_msg.from_user)
+        let doc_id = Array.from(allFriends).find(id => id.textContent === new_msg.fromUser)
 
         if(doc_id != undefined){
             
             let parentDiv = doc_id.parentElement;
             let resetMsg = parentDiv.children[1].lastElementChild.children[1];
-            resetMsg.textContent = new_msg.message;
+            resetMsg.textContent = new_msg.messages;
             let first_friend = parentDiv.parentElement.children[0]
             parentDiv.parentElement.insertBefore(parentDiv,first_friend)
     
@@ -447,23 +466,23 @@ function insertNewMessageBefor(data){
 }
 
 
-let add_new_friend = friend =>{
+const add_new_friend = friend =>{
     let friend_div = document.createElement('div')
     friend_div.classList.add('friend')
     friend_div.classList.add('frd')
     let info;
     let time = friend.time.substring(3,8)
 
-    if(friend.from_user === userID){
+    if(friend.fromUser === userID){
         info = `
         <img src="${friend.profile_pic}" />
         <div class="doc-flow">
             <div class="doc-flow-items doc-names">
                 <strong class="doc-name">${friend.name}</strong>
-            <strong class="doc-specs" style="font-weight: light; color: gray;">${friend.message}</strong> 
+            <strong class="doc-specs" style="font-weight: light; color: gray;">${friend.messages}</strong> 
             </div>
         </div>
-        <span id="docId" style="display:none">${friend.to_user}</span>
+        <span id="docId" style="display:none">${friend.toUser}</span>
         <span class="messageID" style="display:none"></span>
         <div class="message-time">${time}</div>
         `
@@ -474,10 +493,10 @@ let add_new_friend = friend =>{
         <div class="doc-flow">
             <div class="doc-flow-items doc-names">
                 <strong class="doc-name">${friend.name}</strong>
-            <strong class="doc-specs" style="font-weight: light; color: gray;">${friend.message}</strong> 
+            <strong class="doc-specs" style="font-weight: light; color: gray;">${friend.messages}</strong> 
             </div>
         </div>
-        <span id="docId" style="display:none">${friend.from_user}</span>
+        <span id="docId" style="display:none">${friend.fromUser}</span>
         <span class="messageID" style="display:none"></span>
         <div class="message-time">${time}</div>
         `
@@ -487,6 +506,7 @@ let add_new_friend = friend =>{
 
         friend_div.innerHTML = info;
         doc_friends.insertAdjacentElement('afterbegin',friend_div)
+        chatBox(friend_div)
         
     },1000)
 

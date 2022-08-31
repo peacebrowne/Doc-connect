@@ -7,6 +7,7 @@ hospital_search.addEventListener('keyup',function(e){
     let hospital_list = document.querySelectorAll('#hospitals .card-title')
     
     hospital_list.forEach(hospital =>{
+        
         let hospital_name = hospital.textContent.toLocaleLowerCase();
         let hospital_card = hospital.parentElement.parentElement;
 
@@ -28,7 +29,8 @@ function filter_docs(){
 
     let filter_value = input.value;
     let data;
-    for(let i = 0; i < doc_specs.length; i++){
+    for( let i = 0; i < doc_specs.length; i++){
+
         let request = doc_specs[i];
         data = request.parentElement.parentElement.parentElement;
         if(request.textContent.includes(filter_value)){

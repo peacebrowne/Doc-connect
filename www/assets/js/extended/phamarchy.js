@@ -455,7 +455,7 @@ function orderMedication(){
 function submitMedOrder(list){
     // console.log(list)
     // make api post request
-    makeAPIPostRequest(`${URL}/api/ordered_medicines`,list)
+    makeAPIPostRequest(`${URL}/api/ordered_medicines`,{"orderList":list})
     .then(data => {
         console.log(data)
     })
@@ -471,15 +471,14 @@ appointment_search.addEventListener('keyup',function(e){
    
     let med_list = document.querySelectorAll('#list-of-med .card .card-body .card-title')
     med_list.forEach(med => {
+        
         let text = med.textContent.toLowerCase().trim();
         let display = med.parentElement.parentElement;
         let angle = display.parentElement.parentElement.parentElement.firstElementChild.lastElementChild;
         let card = display.parentElement.parentElement;
-       
-
 
         // if medicine exist show it, else hide it
-        if(text.indexOf(term) != -1){
+        if(text.includes(term)){
             card.style.display = 'flex';
             angle.className = angleDown;
             display.parentElement.style.display = 'block'

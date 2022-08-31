@@ -109,9 +109,9 @@ function getSignedRequest(file){
 		//   add user image path to the database
 		makeAPIPostRequest(`${URL}/api/saveImagePath`, { pictureUrl: url, userid:localStorage.getItem('userID')})
 		.then(data => {
+			localStorage.setItem('user-first-login','true')
+			location.replace("intro.html")
 			loggingUser("true");
-			// localStorage.setItem('user-first-login','true')
-			// location.replace("intro.html")
 				
 		});
 		//   document.getElementById('avatar-url').value = url;

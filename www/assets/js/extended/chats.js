@@ -37,37 +37,30 @@ function sendMessage(receiverId,senderId,message){
         seen: false
     }
 
-    fetch("https://docconnect2022.herokuapp.com/api/saveMessage",{
-        method: "POST",
-        headers:{
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(saveMessage)
-    })  
-    .then(response => response.json())
+	makeAPIPostRequest(`${URL}/api/saveMessage`, saveMessage)
     .then(data =>{
-       
-        let conversations = document.getElementById('charts')
-        let receivedDiv = document.createElement('div')
-        receivedDiv.classList.add('user-response')
-        
-        if(saveMessage.message == ''){
-            receivedDiv.innerHTML = `
-            <div class="response" style="padding: 7px 10px; width: 50px; height: 30px;"
-                
-            </div>`
-        }
-        else{
-            receivedDiv.innerHTML = `
-            <div class="response">
-                <span>
-                    ${saveMessage.message}
-                 </span>
-            </div>`
-        }
-        conversations.appendChild(receivedDiv)
-    })
-    sending_message.value = ''
+        //    console.log(data)
+            let conversations = document.getElementById('charts')
+            let receivedDiv = document.createElement('div')
+            receivedDiv.classList.add('user-response')
+            
+            if(saveMessage.message == ''){
+                receivedDiv.innerHTML = `
+                <div class="response" style="padding: 7px 10px; width: 50px; height: 30px;"
+                    
+                </div>`
+            }
+            else{
+                receivedDiv.innerHTML = `
+                <div class="response">
+                    <span>
+                        ${saveMessage.message}
+                     </span>
+                </div>`
+            }
+            conversations.appendChild(receivedDiv)
+        })
+        sending_message.value = ''
 }
 
 
@@ -76,7 +69,7 @@ function instant_messsage(data){
 
     let conversations = document.getElementById('charts')
 
-    if(data.from_user === String(receiver) && data.toUser == userid){
+    if(data.fromUser === receiver && data.toUser == userid){
         
         let sendDiv = document.createElement('div')
                 sendDiv.classList.add('user-text')
