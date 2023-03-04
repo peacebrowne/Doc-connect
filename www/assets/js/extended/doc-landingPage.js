@@ -184,7 +184,7 @@ const move_back = () => {
     switch_sections_header('setting')
 
     if(previous_setting_section == ''){
-        location.reload()
+        hideElement('#setting-section')
         return;
     }
     hideElement(current_setting_section)
