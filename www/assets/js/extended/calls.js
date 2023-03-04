@@ -1,5 +1,4 @@
 const call_icon = document.querySelector('#doc-conversation .fa-phone')
-console.log(call_icon)
 let caller_id;
 let reciever_info;
 let sender_info;
@@ -68,8 +67,6 @@ call_icon.addEventListener('click', ev => {
     })
     
 })
-
-
 
 const end_call = document.getElementById('end-callBtn');
 end_call.addEventListener('click' , ev => {
